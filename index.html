@@ -65,8 +65,11 @@
         }
 
         function parseDate(dateString) {
-            // Adjust the date parsing as per the expected format from data.txt
-            return new Date(dateString);
+            const [date, time] = dateString.split(' ');
+            const [month, day, year] = date.split('/');
+            const [hours, minutes, seconds] = time.split(':');
+
+            return new Date(`${year}-${month}-${day}T${hours}:${minutes}:${seconds}`);
         }
 
         function compareTimes() {
@@ -130,4 +133,3 @@
     <p class="time-difference"><strong>Current Time - IB Check Time:</strong> <span id="timeDifferenceIB" class="value"></span></p>
 </body>
 </html>
- 
