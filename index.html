@@ -107,6 +107,8 @@
         compareTimes();
         setInterval(compareTimes, 120000); // Update every 2 minutes
     </script>
+    <!-- Explicitly opt out of FLoC calculations -->
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
 </head>
 <body>
     <h1>Time Comparison Results</h1>
@@ -114,6 +116,4 @@
     <p><strong>Computer Check Time:</strong> <span id="computerCheckTime" class="value"></span></p>
     <p class="time-difference"><strong>Current Time - Computer Check Time:</strong> <span id="timeDifferenceComputer" class="value"></span></p>
     <p><strong>IB Check Time:</strong> <span id="ibCheckTime" class="value"></span></p>
-    <p class="time-difference"><strong>Current Time - IB Check Time:</strong> <span id="timeDifferenceIB" class="value"></span></p>
-</body>
-</html>
+    <p class="time-difference"><strong>Current Time - IB Check Time:</strong> <span id="timeDifferenceIB" class="value
