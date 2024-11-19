@@ -1,0 +1,57 @@
+name: Compare Timestamps
+
+on:
+  schedule:
+    - cron: '*/1 * * * *' # Runs every minute
+
+jobs:
+  run_script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up PowerShell
+        uses: actions/setup-powershell@v2
+
+      - name: Run PowerShell Script
+        run: |
+          # Read the data.txt content
+          $dataFilePath = "$(pwd)/data.txt"
+          $fileContent = Get-Content -Path $dataFilePath
+
+          # Extract and parse timestamps
+          $computerCheckTimeString = ($fileContent | Select-String -Pattern "Computer,(\S+ \S+)").Matches.Groups[1].Value
+          $ibCheckTimeString = ($fileContent | Select-String -Pattern "IB,(\S+ \S+)").Matches.Groups[1].Value
+
+          $computerCheckTime = [DateTime]::ParseExact($computerCheckTimeString, "MM/dd/yyyy HH:mm:ss", $null)
+          $ibCheckTime = [DateTime]::ParseExact($ibCheckTimeString, "MM/dd/yyyy HH:mm:ss", $null)
+
+          # Get current time
+          $currentDateTime = Get-Date
+
+          # Compare times
+          $comparisonResults = @()
+          if ($currentDateTime -gt $computerCheckTime) {
+              $comparisonResults += "Current time is later than Computer check time."
+          } else {
+              $comparisonResults += "Current time is earlier than or equal to Computer check time."
+          }
+
+          if ($currentDateTime -gt $ibCheckTime) {
+              $comparisonResults += "Current time is later than IB check time."
+          } else {
+              $comparisonResults += "Current time is earlier than or equal to IB check time."
+          }
+
+          # Output the results
+          $comparisonResults | Out-File -FilePath "$(pwd)/docs/index.html" -Encoding UTF8
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add docs/index.html
+          git commit -m "Update comparison results"
+          git push
