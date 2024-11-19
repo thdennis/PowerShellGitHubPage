@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Demo Email</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("0gcH1FhXdrDZ9KliN"); // Replace with your EmailJS User ID
+        })();
+
+        function sendDemoEmail() {
+            emailjs.send("service_6wnxufr", "template_ql5oqxo", {
+                subject: "Test Email",
+                description: "This is a test email to demonstrate EmailJS functionality.",
+                to_email: "thdennis.dc@gmail.com"
+            })
+            .then(function(response) {
+                console.log("Email sent successfully!", response.status, response.text);
+                alert("Email sent successfully!");
+            }, function(error) {
+                console.error("Failed to send email.", error);
+                alert("Failed to send email.");
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Send Demo Email</h1>
+    <button onclick="sendDemoEmail()">Send Demo Email</button>
+</body>
+</html>
