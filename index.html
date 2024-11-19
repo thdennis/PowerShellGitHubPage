@@ -64,7 +64,7 @@
         }
 
         function compareTimes() {
-            fetch('data.txt')
+            fetch('https://raw.githubusercontent.com/thdennis/PowerShellGitHubPage/main/data.txt')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`HTTP error! status: ${response.status}`);
