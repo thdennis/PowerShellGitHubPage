@@ -18,17 +18,12 @@
         .value {
             font-weight: bold;
         }
-        button {
-            padding: 10px 15px;
-            font-size: 16px;
-            margin-top: 20px;
-        }
     </style>
     <!-- Use the latest version of the EmailJS SDK from CDN -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@latest/dist/email.min.js"></script>
     <script type="text/javascript">
         (function () {
-            emailjs.init("7tS3TMQkimjiJq10t"); // Replace with your EmailJS public key
+            emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
             console.log("EmailJS initialized with public key");
         })();
 
@@ -39,19 +34,19 @@
             return `${hours}:${minutes}:${seconds}`;
         }
 
-        function sendDemoEmail() {
-            console.log("Attempting to send demo email");
-            emailjs.send("service_6wnxufr", "template_ql5oqxo", {
-                subject: "Test Email",
-                description: "This is a test email to demonstrate EmailJS functionality.",
+        function sendAlertEmail(description) {
+            console.log("Attempting to send alert email");
+            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+                subject: "Alert: Time Difference Exceeded",
+                description: description,
                 to_email: "thdennis.dc@gmail.com"
             })
             .then(function(response) {
-                console.log("Demo email sent successfully!", response.status, response.text);
-                alert("Demo email sent successfully!");
+                console.log("Alert email sent successfully!", response.status, response.text);
+                alert("Alert email sent successfully!");
             }, function(error) {
-                console.error("Failed to send demo email:", error);
-                alert("Failed to send demo email.");
+                console.error("Failed to send alert email:", error);
+                alert("Failed to send alert email.");
             });
         }
 
@@ -86,6 +81,14 @@
 
                     document.getElementById('timeDifferenceComputer').innerText = formatTimeDifference(timeDiffComputer);
                     document.getElementById('timeDifferenceIB').innerText = formatTimeDifference(timeDiffIB);
+
+                    // Check if time difference exceeds 20 minutes (1200 seconds)
+                    if (timeDiffComputer > 1200 * 1000) {
+                        sendAlertEmail("Current Time - Computer Check Time exceeds 20 minutes.");
+                    }
+                    if (timeDiffIB > 1200 * 1000) {
+                        sendAlertEmail("Current Time - IB Check Time exceeds 20 minutes.");
+                    }
                 })
                 .catch(error => console.error('Error: ', error.message));
         }
@@ -101,7 +104,5 @@
     <p class="time-difference"><strong>Current Time - Computer Check Time:</strong> <span id="timeDifferenceComputer" class="value"></span></p>
     <p><strong>IB Check Time:</strong> <span id="ibCheckTime" class="value"></span></p>
     <p class="time-difference"><strong>Current Time - IB Check Time:</strong> <span id="timeDifferenceIB" class="value"></span></p>
-
-    <button onclick="sendDemoEmail()">Send Demo Email</button>
 </body>
 </html>
