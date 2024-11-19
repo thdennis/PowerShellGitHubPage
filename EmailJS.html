@@ -22,19 +22,11 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
     <script type="text/javascript">
         (function () {
-            emailjs.init("0gcH1FhXdrDZ9KliN"); // Replace with your EmailJS User ID
+            emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS User ID
         })();
-    </script>
-</head>
-<body>
-    <h1>Time Comparison Results</h1>
-    <p><strong>Current Time:</strong> <span id="currentTime" class="value"></span></p>
-    <p><strong>Computer Check Time:</strong> <span id="computerCheckTime" class="value"></span></p>
-    <p class="time-difference"><strong>Current Time - Computer Check Time:</strong> <span id="timeDifferenceComputer" class="value"></span></p>
-    <p><strong>IB Check Time:</strong> <span id="ibCheckTime" class="value"></span></p>
-    <p class="time-difference"><strong>Current Time - IB Check Time:</strong> <span id="timeDifferenceIB" class="value"></span></p>
 
-    <script>
+        const EMAIL_INTERVAL_MS = 90 * 60 * 1000; // 90 minutes in milliseconds
+
         function formatTimeDifference(diff) {
             const hours = Math.floor(diff / (1000 * 60 * 60)).toString().padStart(2, '0');
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
@@ -43,16 +35,24 @@
         }
 
         function sendErrorEmail(description) {
-            emailjs.send("service_6wnxufr", "template_ql5oqxo", {
-                subject: "errorsp",
-                description: description,
-                to_email: "thdennis.dc@gmail.com"
-            })
-            .then(function(response) {
-                console.log("Email sent successfully!", response.status, response.text);
-            }, function(error) {
-                console.error("Failed to send email.", error);
-            });
+            const lastEmailSent = localStorage.getItem('lastEmailSent');
+            const now = new Date().getTime();
+
+            if (!lastEmailSent || (now - lastEmailSent) > EMAIL_INTERVAL_MS) {
+                emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+                    subject: "errorsp",
+                    description: description,
+                    to_email: "thdennis.dc@gmail.com"
+                })
+                .then(function(response) {
+                    console.log("Email sent successfully!", response.status, response.text);
+                    localStorage.setItem('lastEmailSent', now);
+                }, function(error) {
+                    console.error("Failed to send email.", error);
+                });
+            } else {
+                console.log("Email not sent. Waiting for the interval to pass.");
+            }
         }
 
         function compareTimes() {
