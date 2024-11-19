@@ -28,6 +28,7 @@
         })();
 
         let lastAlertTimestamp = 0;
+        let emailSendingEnabled = false; // Set to false to disable email sending
 
         function formatTimeDifference(diff) {
             const hours = Math.floor(diff / (1000 * 60 * 60)).toString().padStart(2, '0');
@@ -40,19 +41,23 @@
             const now = new Date().getTime();
             if (now - lastAlertTimestamp > 90 * 60 * 1000) { // 90 minutes in milliseconds
                 console.log("Attempting to send alert email");
-                emailjs.send("service_6wnxufr", "template_ql5oqxo", {
-                    subject: "Alert: Time Difference Exceeded",
-                    description: description,
-                    to_email: "thdennis.dc@gmail.com"
-                })
-                .then(function(response) {
-                    console.log("Alert email sent successfully!", response.status, response.text);
-                    alert("Alert email sent successfully!");
-                    lastAlertTimestamp = now;
-                }, function(error) {
-                    console.error("Failed to send alert email:", error);
-                    alert("Failed to send alert email.");
-                });
+                if (emailSendingEnabled) {
+                    emailjs.send("service_6wnxufr", "template_ql5oqxo", {
+                        subject: "Alert: Time Difference Exceeded",
+                        description: description,
+                        to_email: "thdennis.dc@gmail.com"
+                    })
+                    .then(function(response) {
+                        console.log("Alert email sent successfully!", response.status, response.text);
+                        alert("Alert email sent successfully!");
+                        lastAlertTimestamp = now;
+                    }, function(error) {
+                        console.error("Failed to send alert email:", error);
+                        alert("Failed to send alert email.");
+                    });
+                } else {
+                    console.log("Email sending disabled for troubleshooting. Description:", description);
+                }
             } else {
                 console.log("Alert email not sent due to cooldown period.");
             }
