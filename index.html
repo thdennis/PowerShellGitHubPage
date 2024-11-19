@@ -64,10 +64,15 @@
         }
 
         function compareTimes() {
-            // Directly fetch data.txt without checking for data.lock
             fetch('data.txt')
-                .then(response => response.text())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.text();
+                })
                 .then(data => {
+                    console.log("Fetched data:", data); // Log fetched data
                     const lines = data.split('\n');
                     let computerTime, ibTime; 
                     lines.forEach(line => {
@@ -75,6 +80,8 @@
                         if (key === 'Computer') computerTime = new Date(value);
                         if (key === 'IB') ibTime = new Date(value);
                     });
+
+                    console.log("Parsed times - Computer:", computerTime, "IB:", ibTime);
 
                     const currentTime = new Date();
                     document.getElementById('currentTime').innerText = currentTime.toLocaleString();
@@ -87,7 +94,6 @@
                     document.getElementById('timeDifferenceComputer').innerText = formatTimeDifference(timeDiffComputer);
                     document.getElementById('timeDifferenceIB').innerText = formatTimeDifference(timeDiffIB);
 
-                    // Check if time difference exceeds 20 minutes (1200 seconds)
                     if (timeDiffComputer > 1200 * 1000) {
                         sendAlertEmail("Current Time - Computer Check Time exceeds 20 minutes.");
                     }
@@ -95,7 +101,7 @@
                         sendAlertEmail("Current Time - IB Check Time exceeds 20 minutes.");
                     }
                 })
-                .catch(error => console.error('Error: ', error.message));
+                .catch(error => console.error('Error:', error.message));
         }
 
         compareTimes();
