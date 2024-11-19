@@ -27,6 +27,8 @@
             console.log("EmailJS initialized with public key");
         })();
 
+        let lastAlertTimestamp = 0;
+
         function formatTimeDifference(diff) {
             const hours = Math.floor(diff / (1000 * 60 * 60)).toString().padStart(2, '0');
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
@@ -35,19 +37,25 @@
         }
 
         function sendAlertEmail(description) {
-            console.log("Attempting to send alert email");
-            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-                subject: "Alert: Time Difference Exceeded",
-                description: description,
-                to_email: "thdennis.dc@gmail.com"
-            })
-            .then(function(response) {
-                console.log("Alert email sent successfully!", response.status, response.text);
-                alert("Alert email sent successfully!");
-            }, function(error) {
-                console.error("Failed to send alert email:", error);
-                alert("Failed to send alert email.");
-            });
+            const now = new Date().getTime();
+            if (now - lastAlertTimestamp > 90 * 60 * 1000) { // 90 minutes in milliseconds
+                console.log("Attempting to send alert email");
+                emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+                    subject: "Alert: Time Difference Exceeded",
+                    description: description,
+                    to_email: "thdennis.dc@gmail.com"
+                })
+                .then(function(response) {
+                    console.log("Alert email sent successfully!", response.status, response.text);
+                    alert("Alert email sent successfully!");
+                    lastAlertTimestamp = now;
+                }, function(error) {
+                    console.error("Failed to send alert email:", error);
+                    alert("Failed to send alert email.");
+                });
+            } else {
+                console.log("Alert email not sent due to cooldown period.");
+            }
         }
 
         function compareTimes() {
