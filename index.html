@@ -23,7 +23,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@latest/dist/email.min.js"></script>
     <script type="text/javascript">
         (function () {
-            emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+            emailjs.init("7tS3TMQkimjiJq10t"); // Replace with your EmailJS public key
             console.log("EmailJS initialized with public key");
         })();
 
@@ -40,7 +40,7 @@
             const now = new Date().getTime();
             if (now - lastAlertTimestamp > 90 * 60 * 1000) { // 90 minutes in milliseconds
                 console.log("Attempting to send alert email");
-                emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+                emailjs.send("service_6wnxufr", "template_ql5oqxo", {
                     subject: "Alert: Time Difference Exceeded",
                     description: description,
                     to_email: "thdennis.dc@gmail.com"
