@@ -25,27 +25,35 @@ jobs:
     - name: Extract and log check times
       run: |
         echo "Extracting and logging check times"
-
-        # Extract entire second line
+        
+        # Attempt to extract entire second line
         second_line=$(sed -n '2p' data.txt)
+        if [ -z "$second_line" ]; then
+          echo "Failed to fetch line 2."
+        else
+          echo "Entire Second Line: \"$second_line\""
+        fi
         
-        # Log the entire second line
-        echo "Entire Second Line: \"$second_line\""
-
-        # Extract time from the second line
+        # Attempt to extract time from the second line
         computer_time=$(echo "$second_line" | cut -d',' -f2)
+        if [ -z "$computer_time" ]; then
+          echo "Failed to extract Computer Check Time from line 2."
+        else
+          echo "Extracted Computer Check Time: \"$computer_time\""
+        fi
         
-        # Ensure time is correctly extracted
-        echo "Extracted Computer Check Time: \"$computer_time\""
-        
-        # Extract entire third line
+        # Attempt to extract entire third line
         third_line=$(sed -n '3p' data.txt)
+        if [ -z "$third_line" ]; then
+          echo "Failed to fetch line 3."
+        else
+          echo "Entire Third Line: \"$third_line\""
+        fi
         
-        # Log the entire third line
-        echo "Entire Third Line: \"$third_line\""
-        
-        # Extract time from the third line
+        # Attempt to extract time from the third line
         ib_time=$(echo "$third_line" | cut -d',' -f2)
-        
-        # Ensure time is correctly extracted
-        echo "Extracted IB Check Time: \"$ib_time\""
+        if [ -z "$ib_time" ]; then
+          echo "Failed to extract IB Check Time from line 3."
+        else
+          echo "Extracted IB Check Time: \"$ib_time\""
+        fi
