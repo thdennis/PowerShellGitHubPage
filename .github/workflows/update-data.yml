@@ -1,0 +1,35 @@
+name: Update data.txt
+
+on:
+  schedule:
+    - cron: '*/2 * * * *' # Every 2 minutes
+  push:
+    branches:
+      - main
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Fetch data from source
+      run: |
+        curl -o data.txt "URL_TO_YOUR_SOURCE" # Replace with the URL to your source, like a Google Drive public link
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add data.txt
+        git commit -m "Update data.txt"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
