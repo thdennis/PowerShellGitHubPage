@@ -64,16 +64,8 @@
         }
 
         function compareTimes() {
-            // Check if the lock file exists
-            fetch('data.lock')
-                .then(response => {
-                    if (response.status === 404) {
-                        // If no lock file, proceed with fetching data.txt
-                        return fetch('data.txt');
-                    } else {
-                        throw new Error('File is being updated');
-                    }
-                })
+            // Directly fetch data.txt without checking for data.lock
+            fetch('data.txt')
                 .then(response => response.text())
                 .then(data => {
                     const lines = data.split('\n');
