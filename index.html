@@ -18,22 +18,38 @@
         .value {
             font-weight: bold;
         }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
     </style>
-</head>
-<body>
-    <h1>Time Comparison Results</h1>
-    <p><strong>Current Time:</strong> <span id="currentTime" class="value"></span></p>
-    <p><strong>Computer Check Time:</strong> <span id="computerCheckTime" class="value"></span></p>
-    <p class="time-difference"><strong>Current Time - Computer Check Time:</strong> <span id="timeDifferenceComputer" class="value"></span></p>
-    <p><strong>IB Check Time:</strong> <span id="ibCheckTime" class="value"></span></p>
-    <p class="time-difference"><strong>Current Time - IB Check Time:</strong> <span id="timeDifferenceIB" class="value"></span></p>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("0gcH1FhXdrDZ9KliN"); // Replace with your EmailJS User ID
+        })();
 
-    <script>
         function formatTimeDifference(diff) {
             const hours = Math.floor(diff / (1000 * 60 * 60)).toString().padStart(2, '0');
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
             const seconds = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
             return `${hours}:${minutes}:${seconds}`;
+        }
+
+        function sendDemoEmail() {
+            emailjs.send("service_6wnxufr", "template_ql5oqxo", {
+                subject: "Test Email",
+                description: "This is a test email to demonstrate EmailJS functionality.",
+                to_email: "thdennis.dc@gmail.com"
+            })
+            .then(function(response) {
+                console.log("Demo email sent successfully!", response.status, response.text);
+                alert("Demo email sent successfully!");
+            }, function(error) {
+                console.error("Failed to send demo email.", error);
+                alert("Failed to send demo email.");
+            });
         }
 
         function compareTimes() {
@@ -63,7 +79,17 @@
         }
 
         compareTimes();
-        setInterval(compareTimes, 120000); // Update every minute
+        setInterval(compareTimes, 120000); // Update every 2 minutes
     </script>
+</head>
+<body>
+    <h1>Time Comparison Results</h1>
+    <p><strong>Current Time:</strong> <span id="currentTime" class="value"></span></p>
+    <p><strong>Computer Check Time:</strong> <span id="computerCheckTime" class="value"></span></p>
+    <p class="time-difference"><strong>Current Time - Computer Check Time:</strong> <span id="timeDifferenceComputer" class="value"></span></p>
+    <p><strong>IB Check Time:</strong> <span id="ibCheckTime" class="value"></span></p>
+    <p class="time-difference"><strong>Current Time - IB Check Time:</strong> <span id="timeDifferenceIB" class="value"></span></p>
+
+    <button onclick="sendDemoEmail()">Send Demo Email</button>
 </body>
 </html>
