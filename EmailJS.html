@@ -78,12 +78,12 @@
                     document.getElementById('timeDifferenceComputer').innerText = formatTimeDifference(timeDiffComputer);
                     document.getElementById('timeDifferenceIB').innerText = formatTimeDifference(timeDiffIB);
 
-                    if (timeDiffComputer > 5 * 60 * 1000) { // 5 minutes in milliseconds
-                        sendErrorEmail("Current Time - Computer Check Time is greater than 00:05:00.");
+                    if (timeDiffComputer > 10 * 60 * 1000) { // 5 minutes in milliseconds
+                        sendErrorEmail("Current Time - Computer Check Time is greater than 00:10:00.");
                     }
 
-                    if (timeDiffIB > 5 * 60 * 1000) { // 5 minutes in milliseconds
-                        sendErrorEmail("Current Time - IB Check Time is greater than 00:05:00.");
+                    if (timeDiffIB > 10 * 60 * 1000) { // 5 minutes in milliseconds
+                        sendErrorEmail("Current Time - IB Check Time is greater than 00:10:00.");
                     }
                 })
                 .catch(error => console.error('Error fetching data.txt:', error));
