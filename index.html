@@ -65,9 +65,9 @@
         }
 
         function parseDate(dateString) {
-            const [date, time] = dateString.split(' ');
-            const [month, day, year] = date.split('/');
-            const [hours, minutes, seconds] = time.split(':');
+            const [datePart, timePart] = dateString.split(' ');
+            const [month, day, year] = datePart.split('/');
+            const [hours, minutes, seconds] = timePart.split(':');
 
             return new Date(`${year}-${month}-${day}T${hours}:${minutes}:${seconds}`);
         }
