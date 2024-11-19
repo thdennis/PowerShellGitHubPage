@@ -26,12 +26,16 @@ jobs:
       run: |
         curl -o data.txt "https://drive.google.com/uc?export=download&id=1-6p05WRNFuCef8OnlkexeZP-HR-hRXYl" # Direct download link
 
+    - name: Log fetched data
+      run: |
+        cat data.txt
+
     - name: Commit and push changes
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git add data.txt
-        git commit -m "Update data.txt"
+        git commit -m "Update data.txt" || echo "No changes to commit"
         git push https://x-access-token:${{ secrets.ACTIONS_PAT }}@github.com/thdennis/PowerShellGitHubPage.git
       env:
         ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
