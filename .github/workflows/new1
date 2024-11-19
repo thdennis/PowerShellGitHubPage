@@ -2,7 +2,7 @@ name: Extract and Log Check Times
 
 on:
   schedule:
-    - cron: '*/29 * * * *' # Every 2 minutes
+    - cron: '*/29 * * * *' # Every 29 minutes
   push:
     branches:
       - main
@@ -22,13 +22,16 @@ jobs:
         echo "Fetch response code: $?"
         cat data.txt
 
-    - name: Extract and log check times
+    - name: Sanitize and process data
       run: |
-        echo "Extracting and logging check times"
+        echo "Sanitizing and processing data"
+        # Remove any unexpected characters
+        tr -d '\r' < data.txt > sanitized_data.txt
+        cat sanitized_data.txt
         
         # Extract check times
-        computer_time=$(grep 'Computer' data.txt | cut -d',' -f2)
-        ib_time=$(grep 'IB' data.txt | cut -d',' -f2)
+        computer_time=$(grep 'Computer' sanitized_data.txt | cut -d',' -f2)
+        ib_time=$(grep 'IB' sanitized_data.txt | cut -d',' -f2)
         
         # Ensure times are correctly extracted
         echo "Extracted Computer Check Time: $computer_time"
