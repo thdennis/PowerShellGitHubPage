@@ -34,8 +34,8 @@ jobs:
         echo "Processing times and calculating differences"
         
         # Extract check times
-        computer_time=$(grep 'Computer' data.txt | cut -d',' -f2)
-        ib_time=$(grep 'IB' data.txt | cut -d',' -f2)
+        computer_time=$(awk -F, '/Computer/ {print $2}' data.txt | tr -d '\r')
+        ib_time=$(awk -F, '/IB/ {print $2}' data.txt | tr -d '\r')
         
         # Get current time in the same format
         current_time=$(date -u +"%m/%d/%Y %H:%M:%S")
