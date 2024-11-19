@@ -22,21 +22,30 @@ jobs:
         echo "Fetch response code: $?"
         cat data.txt
 
-    - name: Sanitize and process data
+    - name: Extract and log check times
       run: |
-        echo "Sanitizing and processing data"
-        # Remove any unexpected characters
-        tr -d '\r' < data.txt > sanitized_data.txt
-        cat sanitized_data.txt
+        echo "Extracting and logging check times"
         
-        # Extract check times based on line number (assuming consistent format)
-        computer_time=$(sed -n '2p' sanitized_data.txt | cut -d',' -f2)
-        ib_time=$(sed -n '3p' sanitized_data.txt | cut -d',' -f2)
+        # Extract entire second line
+        second_line=$(sed -n '2p' data.txt)
         
-        # Ensure times are correctly extracted
+        # Log the entire second line
+        echo "Entire Second Line: $second_line"
+
+        # Extract time from the second line
+        computer_time=$(echo $second_line | cut -d',' -f2)
+        
+        # Ensure time is correctly extracted
         echo "Extracted Computer Check Time: $computer_time"
-        echo "Extracted IB Check Time: $ib_time"
         
-        # Log the extracted times
-        echo "Computer Check Time: $computer_time"
-        echo "IB Check Time: $ib_time"
+        # Extract entire third line
+        third_line=$(sed -n '3p' data.txt)
+        
+        # Log the entire third line
+        echo "Entire Third Line: $third_line"
+        
+        # Extract time from the third line
+        ib_time=$(echo $third_line | cut -d',' -f2)
+        
+        # Ensure time is correctly extracted
+        echo "Extracted IB Check Time: $ib_time"
