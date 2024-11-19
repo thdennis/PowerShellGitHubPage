@@ -28,7 +28,7 @@
         })();
 
         let lastAlertTimestamp = 0;
-        let emailSendingEnabled = false; // Set to false to disable email sending
+        let emailSendingEnabled = true; // Set to true to enable email sending
 
         function formatTimeDifference(diff) {
             const hours = Math.floor(diff / (1000 * 60 * 60)).toString().padStart(2, '0');
@@ -74,7 +74,7 @@
                 .then(data => {
                     console.log("Fetched data:", data); // Log fetched data
                     const lines = data.split('\n').filter(line => line.trim() !== ''); // Remove any empty lines
-                    let computerTime, ibTime; 
+                    let computerTime, ibTime;
 
                     lines.forEach(line => {
                         const [key, value] = line.split(',');
