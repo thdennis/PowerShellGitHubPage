@@ -1,0 +1,35 @@
+name: Extract and Log Check Times
+
+on:
+  schedule:
+    - cron: '*/29 * * * *' # Every 2 minutes
+  push:
+    branches:
+      - main
+
+jobs:
+  extract-check-times:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Fetch data from source
+      run: |
+        echo "Fetching data from source"
+        curl -L -o data.txt "https://drive.google.com/uc?export=download&id=1-6p05WRNFuCef8OnlkexeZP-HR-hRXYl"
+        echo "Fetch response code: $?"
+        cat data.txt
+
+    - name: Extract and log check times
+      run: |
+        echo "Extracting and logging check times"
+        
+        # Extract check times
+        computer_time=$(awk -F',' '/Computer/ {print $2}' data.txt | tr -d '\r')
+        ib_time=$(awk -F',' '/IB/ {print $2}' data.txt | tr -d '\r')
+        
+        # Ensure times are correctly extracted
+        echo "Extracted Computer Check Time: $computer_time"
+        echo "Extracted IB Check Time: $ib_time"
