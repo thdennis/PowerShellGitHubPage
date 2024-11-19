@@ -22,7 +22,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
     <script type="text/javascript">
         (function () {
-            emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS User ID
+            emailjs.init("0gcH1FhXdrDZ9KliN"); // Replace with your EmailJS User ID
         })();
 
         const EMAIL_INTERVAL_MS = 90 * 60 * 1000; // 90 minutes in milliseconds
@@ -39,7 +39,7 @@
             const now = new Date().getTime();
 
             if (!lastEmailSent || (now - lastEmailSent) > EMAIL_INTERVAL_MS) {
-                emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+                emailjs.send("service_6wnxufr", "template_ql5oqxo", {
                     subject: "errorsp",
                     description: description,
                     to_email: "thdennis.dc@gmail.com"
