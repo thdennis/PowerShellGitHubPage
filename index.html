@@ -24,7 +24,8 @@
             margin-top: 20px;
         }
     </style>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+    <!-- Use the latest version of the EmailJS SDK from CDN -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@latest/dist/email.min.js"></script>
     <script type="text/javascript">
         (function () {
             emailjs.init("7tS3TMQkimjiJq10t"); // Replace with your EmailJS public key
@@ -49,7 +50,7 @@
                 console.log("Demo email sent successfully!", response.status, response.text);
                 alert("Demo email sent successfully!");
             }, function(error) {
-                console.error("Failed to send demo email.", error);
+                console.error("Failed to send demo email:", error);
                 alert("Failed to send demo email.");
             });
         }
