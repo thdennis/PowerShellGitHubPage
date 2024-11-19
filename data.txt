@@ -12729,3 +12729,379 @@
 [11/19/2024 23:32:12] TWS error message: Id= 1007220; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
 [11/19/2024 23:32:12] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/18/2024 10:58:13.000  -  02/18/2024 11:31:32.000 ] (Id= 1007221)
 [11/19/2024 23:32:12] TWS error message: Id= 1007221; code= 162; description= Historical Market Data Service error message:Historical data request pacing violation
+[11/19/2024 23:32:13] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/18/2024 10:58:13.000  -  02/18/2024 11:31:32.000 ] (Id= 1007222)
+[11/19/2024 23:32:13] TWS error message: Id= 1007222; code= 162; description= Historical Market Data Service error message:Historical data request pacing violation
+[11/19/2024 23:32:16] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/18/2024 10:58:13.000  -  02/18/2024 11:31:32.000 ] (Id= 1007223)
+[11/19/2024 23:32:16] TWS error message: Id= 1007223; code= 162; description= Historical Market Data Service error message:Historical data request pacing violation
+[11/19/2024 23:32:18] TWS warning message: Id= -1; code= 2103; description= Market data farm connection is broken:usfarm.nj
+[11/19/2024 23:32:18] TWS warning message: Id= -1; code= 2103; description= Market data farm connection is broken:hfarm
+[11/19/2024 23:32:18] TWS warning message: Id= -1; code= 2103; description= Market data farm connection is broken:usfuture
+[11/19/2024 23:32:18] TWS warning message: Id= -1; code= 2103; description= Market data farm connection is broken:cashfarm
+[11/19/2024 23:32:18] TWS warning message: Id= -1; code= 2157; description= Sec-def data farm connection is broken:secdefhk
+[11/19/2024 23:32:18] TWS warning message: Id= -1; code= 2105; description= HMDS data farm connection is broken:apachmds
+[11/19/2024 23:32:18] TWS warning message: Id= -1; code= 2105; description= HMDS data farm connection is broken:cashhmds
+[11/19/2024 23:32:18] TWS warning message: Id= -1; code= 2105; description= HMDS data farm connection is broken:ushmds
+[11/19/2024 23:32:18] TWS warning message: Id= -1; code= 2106; description= HMDS data farm connection is OK:apachmds
+[11/19/2024 23:32:18] TWS warning message: Id= -1; code= 2158; description= Sec-def data farm connection is OK:secdefhk
+[11/19/2024 23:32:18] TWS warning message: Id= -1; code= 2104; description= Market data farm connection is OK:hfarm
+[11/19/2024 23:32:19] TWS warning message: Id= -1; code= 2106; description= HMDS data farm connection is OK:ushmds
+[11/19/2024 23:32:19] TWS warning message: Id= -1; code= 2106; description= HMDS data farm connection is OK:cashhmds
+[11/19/2024 23:32:19] TWS warning message: Id= -1; code= 2104; description= Market data farm connection is OK:cashfarm
+[11/19/2024 23:32:19] TWS warning message: Id= -1; code= 2104; description= Market data farm connection is OK:usfarm.nj
+[11/19/2024 23:32:19] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/18/2024 10:58:13.000  -  02/18/2024 11:31:32.000 ] (Id= 1007229)
+[11/19/2024 23:32:19] TWS error message: Id= 1007229; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:19] TWS warning message: Id= -1; code= 2104; description= Market data farm connection is OK:usfuture
+[11/19/2024 23:32:22] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/18/2024 10:24:54.000  -  02/18/2024 10:58:13.000 ] (Id= 1007230)
+[11/19/2024 23:32:22] TWS error message: Id= 1007230; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:23] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/18/2024 09:51:35.000  -  02/18/2024 10:24:54.000 ] (Id= 1007231)
+[11/19/2024 23:32:23] TWS error message: Id= 1007231; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:23] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/18/2024 09:18:16.000  -  02/18/2024 09:51:35.000 ] (Id= 1007232)
+[11/19/2024 23:32:23] TWS error message: Id= 1007232; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:23] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/18/2024 08:44:57.000  -  02/18/2024 09:18:16.000 ] (Id= 1007233)
+[11/19/2024 23:32:23] TWS error message: Id= 1007233; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:24] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/18/2024 08:11:38.000  -  02/18/2024 08:44:57.000 ] (Id= 1007234)
+[11/19/2024 23:32:24] TWS error message: Id= 1007234; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:24] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/18/2024 07:38:19.000  -  02/18/2024 08:11:38.000 ] (Id= 1007235)
+[11/19/2024 23:32:24] TWS error message: Id= 1007235; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:24] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/18/2024 07:05:00.000  -  02/18/2024 07:38:19.000 ] (Id= 1007236)
+[11/19/2024 23:32:24] TWS error message: Id= 1007236; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:25] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/18/2024 06:31:41.000  -  02/18/2024 07:05:00.000 ] (Id= 1007237)
+[11/19/2024 23:32:25] TWS error message: Id= 1007237; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:25] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/18/2024 05:58:22.000  -  02/18/2024 06:31:41.000 ] (Id= 1007238)
+[11/19/2024 23:32:25] TWS error message: Id= 1007238; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:26] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/18/2024 05:25:03.000  -  02/18/2024 05:58:22.000 ] (Id= 1007239)
+[11/19/2024 23:32:26] TWS error message: Id= 1007239; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:26] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/18/2024 04:51:44.000  -  02/18/2024 05:25:03.000 ] (Id= 1007240)
+[11/19/2024 23:32:26] TWS error message: Id= 1007240; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:26] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/18/2024 04:18:25.000  -  02/18/2024 04:51:44.000 ] (Id= 1007241)
+[11/19/2024 23:32:26] TWS error message: Id= 1007241; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:27] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/18/2024 03:45:06.000  -  02/18/2024 04:18:25.000 ] (Id= 1007242)
+[11/19/2024 23:32:27] TWS error message: Id= 1007242; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:27] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/18/2024 03:11:47.000  -  02/18/2024 03:45:06.000 ] (Id= 1007243)
+[11/19/2024 23:32:27] TWS error message: Id= 1007243; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:28] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/18/2024 02:38:28.000  -  02/18/2024 03:11:47.000 ] (Id= 1007244)
+[11/19/2024 23:32:28] TWS error message: Id= 1007244; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:28] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/18/2024 02:05:09.000  -  02/18/2024 02:38:28.000 ] (Id= 1007245)
+[11/19/2024 23:32:28] TWS error message: Id= 1007245; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:28] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/18/2024 01:31:50.000  -  02/18/2024 02:05:09.000 ] (Id= 1007246)
+[11/19/2024 23:32:28] TWS error message: Id= 1007246; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:28] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/18/2024 00:58:31.000  -  02/18/2024 01:31:50.000 ] (Id= 1007247)
+[11/19/2024 23:32:28] TWS error message: Id= 1007247; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:29] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/18/2024 00:25:12.000  -  02/18/2024 00:58:31.000 ] (Id= 1007248)
+[11/19/2024 23:32:29] TWS error message: Id= 1007248; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:29] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 23:51:53.000  -  02/18/2024 00:25:12.000 ] (Id= 1007249)
+[11/19/2024 23:32:29] TWS error message: Id= 1007249; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:30] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 23:18:34.000  -  02/17/2024 23:51:53.000 ] (Id= 1007250)
+[11/19/2024 23:32:30] TWS error message: Id= 1007250; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:30] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 22:45:15.000  -  02/17/2024 23:18:34.000 ] (Id= 1007251)
+[11/19/2024 23:32:30] TWS error message: Id= 1007251; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:30] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 22:11:56.000  -  02/17/2024 22:45:15.000 ] (Id= 1007252)
+[11/19/2024 23:32:30] TWS error message: Id= 1007252; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:31] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 21:38:37.000  -  02/17/2024 22:11:56.000 ] (Id= 1007253)
+[11/19/2024 23:32:31] TWS error message: Id= 1007253; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:31] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 21:05:18.000  -  02/17/2024 21:38:37.000 ] (Id= 1007254)
+[11/19/2024 23:32:31] TWS error message: Id= 1007254; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:32] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 20:31:59.000  -  02/17/2024 21:05:18.000 ] (Id= 1007255)
+[11/19/2024 23:32:32] TWS error message: Id= 1007255; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:32] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 19:58:40.000  -  02/17/2024 20:31:59.000 ] (Id= 1007256)
+[11/19/2024 23:32:32] TWS error message: Id= 1007256; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:32] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 19:25:21.000  -  02/17/2024 19:58:40.000 ] (Id= 1007257)
+[11/19/2024 23:32:32] TWS error message: Id= 1007257; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:32] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 18:52:02.000  -  02/17/2024 19:25:21.000 ] (Id= 1007258)
+[11/19/2024 23:32:32] TWS error message: Id= 1007258; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:33] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 18:18:43.000  -  02/17/2024 18:52:02.000 ] (Id= 1007259)
+[11/19/2024 23:32:33] TWS error message: Id= 1007259; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:33] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 17:45:24.000  -  02/17/2024 18:18:43.000 ] (Id= 1007260)
+[11/19/2024 23:32:33] TWS error message: Id= 1007260; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:34] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 17:12:05.000  -  02/17/2024 17:45:24.000 ] (Id= 1007261)
+[11/19/2024 23:32:34] TWS error message: Id= 1007261; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:34] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 16:38:46.000  -  02/17/2024 17:12:05.000 ] (Id= 1007262)
+[11/19/2024 23:32:34] TWS error message: Id= 1007262; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:34] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 16:05:27.000  -  02/17/2024 16:38:46.000 ] (Id= 1007263)
+[11/19/2024 23:32:34] TWS error message: Id= 1007263; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:35] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 15:55:27.000  -  02/17/2024 16:05:27.000 ] (Id= 1007264)
+[11/19/2024 23:32:35] TWS error message: Id= 1007264; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:35] Data request for HSIX4 HKFE FUT HKD 50    1 Tick Ask [ 11/19/2024 15:22:18.000  -  11/19/2024 15:32:18.000 ] (Id= 1007224)
+[11/19/2024 23:32:35] Sending HSIX4 1 Tick Ask history to data server: 20 quotes downloaded (Id= HSIX4;A;TICK;1;HKFE;FUT;HKD;)
+[11/19/2024 23:32:35] Data request for HSIX4 HKFE FUT HKD 50    1 Tick Bid [ 11/19/2024 15:22:18.000  -  11/19/2024 15:32:18.000 ] (Id= 1007225)
+[11/19/2024 23:32:36] Sending HSIX4 1 Tick Bid history to data server: 34 quotes downloaded (Id= HSIX4;B;TICK;1;HKFE;FUT;HKD;)
+[11/19/2024 23:32:36] Data request for HSIX4 HKFE FUT HKD 50    1 Tick Trade [ 11/19/2024 15:22:18.000  -  11/19/2024 15:32:18.000 ] (Id= 1007226)
+[11/19/2024 23:32:36] Sending HSIX4 1 Tick Trade history to data server: 16 quotes downloaded (Id= HSIX4;T;TICK;1;HKFE;FUT;HKD;)
+[11/19/2024 23:32:36] Data request for HSIZ4 HKFE FUT HKD 50    1 Tick Trade [ 11/19/2024 15:22:18.000  -  11/19/2024 15:32:18.000 ] (Id= 1007227)
+[11/19/2024 23:32:36] Sending HSIZ4 1 Tick Trade history to data server: 30 quotes downloaded (Id= HSIZ4;T;TICK;1;HKFE;FUT;HKD;)
+[11/19/2024 23:32:36] Data request for HHIX4 HKFE FUT HKD 50    1 Tick Trade [ 11/19/2024 15:22:18.000  -  11/19/2024 15:32:18.000 ] (Id= 1007228)
+[11/19/2024 23:32:36] Sending HHIX4 1 Tick Trade history to data server: 2 quotes downloaded (Id= HHIX4;T;TICK;1;HKFE;FUT;HKD;)
+[11/19/2024 23:32:37] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 15:22:08.000  -  02/17/2024 15:55:27.000 ] (Id= 1007266)
+[11/19/2024 23:32:37] TWS error message: Id= 1007266; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:37] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 14:48:49.000  -  02/17/2024 15:22:08.000 ] (Id= 1007272)
+[11/19/2024 23:32:37] TWS error message: Id= 1007272; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:37] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 14:15:30.000  -  02/17/2024 14:48:49.000 ] (Id= 1007273)
+[11/19/2024 23:32:37] TWS error message: Id= 1007273; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:37] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 13:42:11.000  -  02/17/2024 14:15:30.000 ] (Id= 1007274)
+[11/19/2024 23:32:37] TWS error message: Id= 1007274; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:38] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 13:08:52.000  -  02/17/2024 13:42:11.000 ] (Id= 1007275)
+[11/19/2024 23:32:38] TWS error message: Id= 1007275; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:38] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 12:35:33.000  -  02/17/2024 13:08:52.000 ] (Id= 1007276)
+[11/19/2024 23:32:38] TWS error message: Id= 1007276; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:39] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 12:02:14.000  -  02/17/2024 12:35:33.000 ] (Id= 1007277)
+[11/19/2024 23:32:39] TWS error message: Id= 1007277; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:39] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 11:28:55.000  -  02/17/2024 12:02:14.000 ] (Id= 1007278)
+[11/19/2024 23:32:39] TWS error message: Id= 1007278; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:39] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 10:55:36.000  -  02/17/2024 11:28:55.000 ] (Id= 1007279)
+[11/19/2024 23:32:39] TWS error message: Id= 1007279; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:40] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 10:22:17.000  -  02/17/2024 10:55:36.000 ] (Id= 1007280)
+[11/19/2024 23:32:40] TWS error message: Id= 1007280; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:40] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 09:48:58.000  -  02/17/2024 10:22:17.000 ] (Id= 1007281)
+[11/19/2024 23:32:40] TWS error message: Id= 1007281; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:40] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 09:15:39.000  -  02/17/2024 09:48:58.000 ] (Id= 1007282)
+[11/19/2024 23:32:40] TWS error message: Id= 1007282; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:41] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 08:42:20.000  -  02/17/2024 09:15:39.000 ] (Id= 1007283)
+[11/19/2024 23:32:41] TWS error message: Id= 1007283; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:41] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 08:09:01.000  -  02/17/2024 08:42:20.000 ] (Id= 1007284)
+[11/19/2024 23:32:41] TWS error message: Id= 1007284; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:42] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 07:35:42.000  -  02/17/2024 08:09:01.000 ] (Id= 1007285)
+[11/19/2024 23:32:42] TWS error message: Id= 1007285; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:42] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 07:02:23.000  -  02/17/2024 07:35:42.000 ] (Id= 1007286)
+[11/19/2024 23:32:42] TWS error message: Id= 1007286; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:42] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 06:29:04.000  -  02/17/2024 07:02:23.000 ] (Id= 1007287)
+[11/19/2024 23:32:42] TWS error message: Id= 1007287; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:43] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 05:55:45.000  -  02/17/2024 06:29:04.000 ] (Id= 1007288)
+[11/19/2024 23:32:43] TWS error message: Id= 1007288; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:43] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 05:22:26.000  -  02/17/2024 05:55:45.000 ] (Id= 1007289)
+[11/19/2024 23:32:43] TWS error message: Id= 1007289; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:44] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 04:49:07.000  -  02/17/2024 05:22:26.000 ] (Id= 1007290)
+[11/19/2024 23:32:44] TWS error message: Id= 1007290; code= 162; description= Historical Market Data Service error message:Historical data request pacing violation
+[11/19/2024 23:32:44] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 04:49:07.000  -  02/17/2024 05:22:26.000 ] (Id= 1007291)
+[11/19/2024 23:32:44] TWS error message: Id= 1007291; code= 162; description= Historical Market Data Service error message:Historical data request pacing violation
+[11/19/2024 23:32:47] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 04:49:07.000  -  02/17/2024 05:22:26.000 ] (Id= 1007292)
+[11/19/2024 23:32:47] TWS error message: Id= 1007292; code= 162; description= Historical Market Data Service error message:Historical data request pacing violation
+[11/19/2024 23:32:48] TWS warning message: Id= -1; code= 2103; description= Market data farm connection is broken:usfarm.nj
+[11/19/2024 23:32:48] TWS warning message: Id= -1; code= 2103; description= Market data farm connection is broken:hfarm
+[11/19/2024 23:32:48] TWS warning message: Id= -1; code= 2103; description= Market data farm connection is broken:usfuture
+[11/19/2024 23:32:48] TWS warning message: Id= -1; code= 2103; description= Market data farm connection is broken:cashfarm
+[11/19/2024 23:32:48] TWS warning message: Id= -1; code= 2157; description= Sec-def data farm connection is broken:secdefhk
+[11/19/2024 23:32:48] TWS warning message: Id= -1; code= 2105; description= HMDS data farm connection is broken:apachmds
+[11/19/2024 23:32:48] TWS warning message: Id= -1; code= 2105; description= HMDS data farm connection is broken:cashhmds
+[11/19/2024 23:32:48] TWS warning message: Id= -1; code= 2105; description= HMDS data farm connection is broken:ushmds
+[11/19/2024 23:32:48] TWS warning message: Id= -1; code= 2106; description= HMDS data farm connection is OK:apachmds
+[11/19/2024 23:32:48] TWS warning message: Id= -1; code= 2158; description= Sec-def data farm connection is OK:secdefhk
+[11/19/2024 23:32:49] TWS warning message: Id= -1; code= 2104; description= Market data farm connection is OK:hfarm
+[11/19/2024 23:32:50] TWS warning message: Id= -1; code= 2106; description= HMDS data farm connection is OK:ushmds
+[11/19/2024 23:32:50] TWS warning message: Id= -1; code= 2106; description= HMDS data farm connection is OK:cashhmds
+[11/19/2024 23:32:50] TWS warning message: Id= -1; code= 2104; description= Market data farm connection is OK:cashfarm
+[11/19/2024 23:32:50] TWS warning message: Id= -1; code= 2104; description= Market data farm connection is OK:usfuture
+[11/19/2024 23:32:50] TWS warning message: Id= -1; code= 2104; description= Market data farm connection is OK:usfarm.nj
+[11/19/2024 23:32:50] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 04:49:07.000  -  02/17/2024 05:22:26.000 ] (Id= 1007298)
+[11/19/2024 23:32:50] TWS error message: Id= 1007298; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:53] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 04:15:48.000  -  02/17/2024 04:49:07.000 ] (Id= 1007299)
+[11/19/2024 23:32:53] TWS error message: Id= 1007299; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:54] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 03:42:29.000  -  02/17/2024 04:15:48.000 ] (Id= 1007300)
+[11/19/2024 23:32:54] TWS error message: Id= 1007300; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:54] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 03:09:10.000  -  02/17/2024 03:42:29.000 ] (Id= 1007301)
+[11/19/2024 23:32:54] TWS error message: Id= 1007301; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:54] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 02:35:51.000  -  02/17/2024 03:09:10.000 ] (Id= 1007302)
+[11/19/2024 23:32:54] TWS error message: Id= 1007302; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:55] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 02:02:32.000  -  02/17/2024 02:35:51.000 ] (Id= 1007303)
+[11/19/2024 23:32:55] TWS error message: Id= 1007303; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:55] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 01:29:13.000  -  02/17/2024 02:02:32.000 ] (Id= 1007304)
+[11/19/2024 23:32:56] TWS error message: Id= 1007304; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:56] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 00:55:54.000  -  02/17/2024 01:29:13.000 ] (Id= 1007305)
+[11/19/2024 23:32:56] TWS error message: Id= 1007305; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:56] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/17/2024 00:22:35.000  -  02/17/2024 00:55:54.000 ] (Id= 1007306)
+[11/19/2024 23:32:56] TWS error message: Id= 1007306; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:56] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 23:49:16.000  -  02/17/2024 00:22:35.000 ] (Id= 1007307)
+[11/19/2024 23:32:56] TWS error message: Id= 1007307; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:57] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 23:15:57.000  -  02/16/2024 23:49:16.000 ] (Id= 1007308)
+[11/19/2024 23:32:57] TWS error message: Id= 1007308; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:57] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 22:42:38.000  -  02/16/2024 23:15:57.000 ] (Id= 1007309)
+[11/19/2024 23:32:57] TWS error message: Id= 1007309; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:58] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 22:09:19.000  -  02/16/2024 22:42:38.000 ] (Id= 1007310)
+[11/19/2024 23:32:58] TWS error message: Id= 1007310; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:58] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 21:36:00.000  -  02/16/2024 22:09:19.000 ] (Id= 1007311)
+[11/19/2024 23:32:58] TWS error message: Id= 1007311; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:58] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 21:02:41.000  -  02/16/2024 21:36:00.000 ] (Id= 1007312)
+[11/19/2024 23:32:58] TWS error message: Id= 1007312; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:59] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 20:29:22.000  -  02/16/2024 21:02:41.000 ] (Id= 1007313)
+[11/19/2024 23:32:59] TWS error message: Id= 1007313; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:32:59] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 19:56:03.000  -  02/16/2024 20:29:22.000 ] (Id= 1007314)
+[11/19/2024 23:32:59] TWS error message: Id= 1007314; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:00] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 19:22:44.000  -  02/16/2024 19:56:03.000 ] (Id= 1007315)
+[11/19/2024 23:33:00] TWS error message: Id= 1007315; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:00] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 18:49:25.000  -  02/16/2024 19:22:44.000 ] (Id= 1007316)
+[11/19/2024 23:33:00] TWS error message: Id= 1007316; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:00] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 18:16:06.000  -  02/16/2024 18:49:25.000 ] (Id= 1007317)
+[11/19/2024 23:33:00] TWS error message: Id= 1007317; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:01] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 17:42:47.000  -  02/16/2024 18:16:06.000 ] (Id= 1007318)
+[11/19/2024 23:33:01] TWS error message: Id= 1007318; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:01] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 17:09:28.000  -  02/16/2024 17:42:47.000 ] (Id= 1007319)
+[11/19/2024 23:33:01] TWS error message: Id= 1007319; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:01] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 16:36:09.000  -  02/16/2024 17:09:28.000 ] (Id= 1007320)
+[11/19/2024 23:33:01] TWS error message: Id= 1007320; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:02] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 16:02:50.000  -  02/16/2024 16:36:09.000 ] (Id= 1007321)
+[11/19/2024 23:33:02] TWS error message: Id= 1007321; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:02] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 15:52:50.000  -  02/16/2024 16:02:50.000 ] (Id= 1007322)
+[11/19/2024 23:33:02] TWS error message: Id= 1007322; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:03] Data request for HSIX4 HKFE FUT HKD 50    1 Tick Ask [ 11/19/2024 15:22:49.000  -  11/19/2024 15:32:49.000 ] (Id= 1007293)
+[11/19/2024 23:33:03] Sending HSIX4 1 Tick Ask history to data server: 1 quotes downloaded (Id= HSIX4;A;TICK;1;HKFE;FUT;HKD;)
+[11/19/2024 23:33:03] Data request for HSIX4 HKFE FUT HKD 50    1 Tick Trade [ 11/19/2024 15:22:49.000  -  11/19/2024 15:32:49.000 ] (Id= 1007294)
+[11/19/2024 23:33:03] Sending HSIX4 1 Tick Trade history to data server: 11 quotes downloaded (Id= HSIX4;T;TICK;1;HKFE;FUT;HKD;)
+[11/19/2024 23:33:03] Data request for HSIZ4 HKFE FUT HKD 50    1 Tick Trade [ 11/19/2024 15:22:49.000  -  11/19/2024 15:32:49.000 ] (Id= 1007295)
+[11/19/2024 23:33:03] Sending HSIZ4 1 Tick Trade history to data server: 31 quotes downloaded (Id= HSIZ4;T;TICK;1;HKFE;FUT;HKD;)
+[11/19/2024 23:33:03] Data request for HHIX4 HKFE FUT HKD 50    1 Tick Trade [ 11/19/2024 15:22:49.000  -  11/19/2024 15:32:49.000 ] (Id= 1007296)
+[11/19/2024 23:33:03] Sending HHIX4 1 Tick Trade history to data server: 1 quotes downloaded (Id= HHIX4;T;TICK;1;HKFE;FUT;HKD;)
+[11/19/2024 23:33:03] Data request for HTIX4 HKFE FUT HKD 50    1 Tick Trade [ 11/19/2024 15:22:49.000  -  11/19/2024 15:32:49.000 ] (Id= 1007297)
+[11/19/2024 23:33:04] Sending HTIX4 1 Tick Trade history to data server: 11 quotes downloaded (Id= HTIX4;T;TICK;1;HKFE;FUT;HKD;)
+[11/19/2024 23:33:04] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 15:19:31.000  -  02/16/2024 15:52:50.000 ] (Id= 1007324)
+[11/19/2024 23:33:04] TWS error message: Id= 1007324; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:04] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 14:46:12.000  -  02/16/2024 15:19:31.000 ] (Id= 1007330)
+[11/19/2024 23:33:04] TWS error message: Id= 1007330; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:04] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 14:12:53.000  -  02/16/2024 14:46:12.000 ] (Id= 1007331)
+[11/19/2024 23:33:04] TWS error message: Id= 1007331; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:05] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 13:39:34.000  -  02/16/2024 14:12:53.000 ] (Id= 1007332)
+[11/19/2024 23:33:05] TWS error message: Id= 1007332; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:05] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 13:06:15.000  -  02/16/2024 13:39:34.000 ] (Id= 1007333)
+[11/19/2024 23:33:05] TWS error message: Id= 1007333; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:06] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 12:32:56.000  -  02/16/2024 13:06:15.000 ] (Id= 1007334)
+[11/19/2024 23:33:06] TWS error message: Id= 1007334; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:06] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 11:59:37.000  -  02/16/2024 12:32:56.000 ] (Id= 1007335)
+[11/19/2024 23:33:06] TWS error message: Id= 1007335; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:06] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 11:26:18.000  -  02/16/2024 11:59:37.000 ] (Id= 1007336)
+[11/19/2024 23:33:06] TWS error message: Id= 1007336; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:07] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 10:52:59.000  -  02/16/2024 11:26:18.000 ] (Id= 1007337)
+[11/19/2024 23:33:07] TWS error message: Id= 1007337; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:07] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 10:19:40.000  -  02/16/2024 10:52:59.000 ] (Id= 1007338)
+[11/19/2024 23:33:07] TWS error message: Id= 1007338; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:08] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 09:46:21.000  -  02/16/2024 10:19:40.000 ] (Id= 1007339)
+[11/19/2024 23:33:08] TWS error message: Id= 1007339; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:08] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 09:13:02.000  -  02/16/2024 09:46:21.000 ] (Id= 1007340)
+[11/19/2024 23:33:08] TWS error message: Id= 1007340; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:08] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 08:39:43.000  -  02/16/2024 09:13:02.000 ] (Id= 1007341)
+[11/19/2024 23:33:08] TWS error message: Id= 1007341; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:08] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 08:06:24.000  -  02/16/2024 08:39:43.000 ] (Id= 1007342)
+[11/19/2024 23:33:09] TWS error message: Id= 1007342; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:09] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 07:33:05.000  -  02/16/2024 08:06:24.000 ] (Id= 1007343)
+[11/19/2024 23:33:09] TWS error message: Id= 1007343; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:09] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 06:59:46.000  -  02/16/2024 07:33:05.000 ] (Id= 1007344)
+[11/19/2024 23:33:09] TWS error message: Id= 1007344; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:10] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 06:26:27.000  -  02/16/2024 06:59:46.000 ] (Id= 1007345)
+[11/19/2024 23:33:10] TWS error message: Id= 1007345; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:10] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 05:53:08.000  -  02/16/2024 06:26:27.000 ] (Id= 1007346)
+[11/19/2024 23:33:10] TWS error message: Id= 1007346; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:10] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 05:19:49.000  -  02/16/2024 05:53:08.000 ] (Id= 1007347)
+[11/19/2024 23:33:10] TWS error message: Id= 1007347; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:11] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 04:46:30.000  -  02/16/2024 05:19:49.000 ] (Id= 1007348)
+[11/19/2024 23:33:11] TWS error message: Id= 1007348; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:11] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 04:13:11.000  -  02/16/2024 04:46:30.000 ] (Id= 1007349)
+[11/19/2024 23:33:11] TWS error message: Id= 1007349; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:12] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 03:39:52.000  -  02/16/2024 04:13:11.000 ] (Id= 1007350)
+[11/19/2024 23:33:12] TWS error message: Id= 1007350; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:12] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 03:06:33.000  -  02/16/2024 03:39:52.000 ] (Id= 1007351)
+[11/19/2024 23:33:12] TWS error message: Id= 1007351; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:12] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 02:33:14.000  -  02/16/2024 03:06:33.000 ] (Id= 1007352)
+[11/19/2024 23:33:12] TWS error message: Id= 1007352; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:13] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 01:59:55.000  -  02/16/2024 02:33:14.000 ] (Id= 1007353)
+[11/19/2024 23:33:13] TWS error message: Id= 1007353; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:13] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 01:26:36.000  -  02/16/2024 01:59:55.000 ] (Id= 1007354)
+[11/19/2024 23:33:13] TWS error message: Id= 1007354; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:13] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 00:53:17.000  -  02/16/2024 01:26:36.000 ] (Id= 1007355)
+[11/19/2024 23:33:13] TWS error message: Id= 1007355; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:14] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/16/2024 00:19:58.000  -  02/16/2024 00:53:17.000 ] (Id= 1007356)
+[11/19/2024 23:33:14] TWS error message: Id= 1007356; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:14] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 23:46:39.000  -  02/16/2024 00:19:58.000 ] (Id= 1007357)
+[11/19/2024 23:33:14] TWS error message: Id= 1007357; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:14] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 23:13:20.000  -  02/15/2024 23:46:39.000 ] (Id= 1007358)
+[11/19/2024 23:33:14] TWS error message: Id= 1007358; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:15] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 22:40:01.000  -  02/15/2024 23:13:20.000 ] (Id= 1007359)
+[11/19/2024 23:33:15] TWS error message: Id= 1007359; code= 162; description= Historical Market Data Service error message:Historical data request pacing violation
+[11/19/2024 23:33:16] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 22:40:01.000  -  02/15/2024 23:13:20.000 ] (Id= 1007360)
+[11/19/2024 23:33:16] TWS error message: Id= 1007360; code= 162; description= Historical Market Data Service error message:Historical data request pacing violation
+[11/19/2024 23:33:19] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 22:40:01.000  -  02/15/2024 23:13:20.000 ] (Id= 1007361)
+[11/19/2024 23:33:19] TWS error message: Id= 1007361; code= 162; description= Historical Market Data Service error message:Historical data request pacing violation
+[11/19/2024 23:33:19] TWS warning message: Id= -1; code= 2103; description= Market data farm connection is broken:usfarm.nj
+[11/19/2024 23:33:19] TWS warning message: Id= -1; code= 2103; description= Market data farm connection is broken:hfarm
+[11/19/2024 23:33:19] TWS warning message: Id= -1; code= 2103; description= Market data farm connection is broken:usfuture
+[11/19/2024 23:33:19] TWS warning message: Id= -1; code= 2103; description= Market data farm connection is broken:cashfarm
+[11/19/2024 23:33:19] TWS warning message: Id= -1; code= 2157; description= Sec-def data farm connection is broken:secdefhk
+[11/19/2024 23:33:19] TWS warning message: Id= -1; code= 2105; description= HMDS data farm connection is broken:apachmds
+[11/19/2024 23:33:19] TWS warning message: Id= -1; code= 2105; description= HMDS data farm connection is broken:cashhmds
+[11/19/2024 23:33:19] TWS warning message: Id= -1; code= 2105; description= HMDS data farm connection is broken:ushmds
+[11/19/2024 23:33:19] TWS warning message: Id= -1; code= 2157; description= Sec-def data farm connection is broken:secdefhk
+[11/19/2024 23:33:19] TWS warning message: Id= -1; code= 2106; description= HMDS data farm connection is OK:apachmds
+[11/19/2024 23:33:20] TWS warning message: Id= -1; code= 2104; description= Market data farm connection is OK:hfarm
+[11/19/2024 23:33:20] TWS warning message: Id= -1; code= 2106; description= HMDS data farm connection is OK:ushmds
+[11/19/2024 23:33:20] TWS warning message: Id= -1; code= 2104; description= Market data farm connection is OK:usfarm.nj
+[11/19/2024 23:33:20] TWS warning message: Id= -1; code= 2106; description= HMDS data farm connection is OK:cashhmds
+[11/19/2024 23:33:21] TWS warning message: Id= -1; code= 2104; description= Market data farm connection is OK:cashfarm
+[11/19/2024 23:33:21] TWS warning message: Id= -1; code= 2104; description= Market data farm connection is OK:usfuture
+[11/19/2024 23:33:22] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 22:40:01.000  -  02/15/2024 23:13:20.000 ] (Id= 1007367)
+[11/19/2024 23:33:22] TWS error message: Id= 1007367; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:24] TWS warning message: Id= -1; code= 2158; description= Sec-def data farm connection is OK:secdefhk
+[11/19/2024 23:33:25] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 22:06:42.000  -  02/15/2024 22:40:01.000 ] (Id= 1007368)
+[11/19/2024 23:33:25] TWS error message: Id= 1007368; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:25] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 21:33:23.000  -  02/15/2024 22:06:42.000 ] (Id= 1007369)
+[11/19/2024 23:33:25] TWS error message: Id= 1007369; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:25] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 21:00:04.000  -  02/15/2024 21:33:23.000 ] (Id= 1007370)
+[11/19/2024 23:33:26] TWS error message: Id= 1007370; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:26] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 20:26:45.000  -  02/15/2024 21:00:04.000 ] (Id= 1007371)
+[11/19/2024 23:33:26] TWS error message: Id= 1007371; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:26] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 19:53:26.000  -  02/15/2024 20:26:45.000 ] (Id= 1007372)
+[11/19/2024 23:33:26] TWS error message: Id= 1007372; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:27] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 19:20:07.000  -  02/15/2024 19:53:26.000 ] (Id= 1007373)
+[11/19/2024 23:33:27] TWS error message: Id= 1007373; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:27] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 18:46:48.000  -  02/15/2024 19:20:07.000 ] (Id= 1007374)
+[11/19/2024 23:33:27] TWS error message: Id= 1007374; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:27] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 18:13:29.000  -  02/15/2024 18:46:48.000 ] (Id= 1007375)
+[11/19/2024 23:33:27] TWS error message: Id= 1007375; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:28] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 17:40:10.000  -  02/15/2024 18:13:29.000 ] (Id= 1007376)
+[11/19/2024 23:33:28] TWS error message: Id= 1007376; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:28] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 17:06:51.000  -  02/15/2024 17:40:10.000 ] (Id= 1007377)
+[11/19/2024 23:33:28] TWS error message: Id= 1007377; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:29] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 16:33:32.000  -  02/15/2024 17:06:51.000 ] (Id= 1007378)
+[11/19/2024 23:33:29] TWS error message: Id= 1007378; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:29] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 16:00:13.000  -  02/15/2024 16:33:32.000 ] (Id= 1007379)
+[11/19/2024 23:33:29] TWS error message: Id= 1007379; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:29] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 15:50:13.000  -  02/15/2024 16:00:13.000 ] (Id= 1007380)
+[11/19/2024 23:33:29] TWS error message: Id= 1007380; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:30] Data request for HSIX4 HKFE FUT HKD 50    1 Tick Ask [ 11/19/2024 15:23:20.000  -  11/19/2024 15:33:20.000 ] (Id= 1007362)
+[11/19/2024 23:33:30] Sending HSIX4 1 Tick Ask history to data server: 1 quotes downloaded (Id= HSIX4;A;TICK;1;HKFE;FUT;HKD;)
+[11/19/2024 23:33:30] Data request for HSIX4 HKFE FUT HKD 50    1 Tick Trade [ 11/19/2024 15:23:20.000  -  11/19/2024 15:33:20.000 ] (Id= 1007363)
+[11/19/2024 23:33:30] Sending HSIX4 1 Tick Trade history to data server: 9 quotes downloaded (Id= HSIX4;T;TICK;1;HKFE;FUT;HKD;)
+[11/19/2024 23:33:30] Data request for HSIZ4 HKFE FUT HKD 50    1 Tick Trade [ 11/19/2024 15:23:20.000  -  11/19/2024 15:33:20.000 ] (Id= 1007364)
+[11/19/2024 23:33:31] Sending HSIZ4 1 Tick Trade history to data server: 31 quotes downloaded (Id= HSIZ4;T;TICK;1;HKFE;FUT;HKD;)
+[11/19/2024 23:33:31] Data request for HHIX4 HKFE FUT HKD 50    1 Tick Trade [ 11/19/2024 15:23:20.000  -  11/19/2024 15:33:20.000 ] (Id= 1007365)
+[11/19/2024 23:33:31] Sending HHIX4 1 Tick Trade history to data server: 3 quotes downloaded (Id= HHIX4;T;TICK;1;HKFE;FUT;HKD;)
+[11/19/2024 23:33:31] Data request for HTIX4 HKFE FUT HKD 50    1 Tick Trade [ 11/19/2024 15:23:20.000  -  11/19/2024 15:33:20.000 ] (Id= 1007366)
+[11/19/2024 23:33:31] Sending HTIX4 1 Tick Trade history to data server: 1 quotes downloaded (Id= HTIX4;T;TICK;1;HKFE;FUT;HKD;)
+[11/19/2024 23:33:31] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 15:16:54.000  -  02/15/2024 15:50:13.000 ] (Id= 1007382)
+[11/19/2024 23:33:31] TWS error message: Id= 1007382; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:31] Data request for HTIG4 HKFE FUT HKD 50    1 Minute Trade [ 02/11/2024 15:16:54.000  -  02/15/2024 15:16:54.000 ] (Id= 1007388)
+[11/19/2024 23:33:31] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 14:43:35.000  -  02/15/2024 15:16:54.000 ] (Id= 1007389)
+[11/19/2024 23:33:31] TWS error message: Id= 1007389; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:32] Data request for HTIG4 HKFE FUT HKD 50    1 Minute Trade [ 02/11/2024 14:43:35.000  -  02/15/2024 14:43:35.000 ] (Id= 1007390)
+[11/19/2024 23:33:32] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 14:10:16.000  -  02/15/2024 14:43:35.000 ] (Id= 1007391)
+[11/19/2024 23:33:32] TWS error message: Id= 1007391; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:32] Data request for HTIG4 HKFE FUT HKD 50    1 Minute Trade [ 02/11/2024 14:10:16.000  -  02/15/2024 14:10:16.000 ] (Id= 1007392)
+[11/19/2024 23:33:33] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 13:36:57.000  -  02/15/2024 14:10:16.000 ] (Id= 1007393)
+[11/19/2024 23:33:33] TWS error message: Id= 1007393; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:33] Data request for HTIG4 HKFE FUT HKD 50    1 Minute Trade [ 02/11/2024 13:36:57.000  -  02/15/2024 13:36:57.000 ] (Id= 1007394)
+[11/19/2024 23:33:33] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 13:03:38.000  -  02/15/2024 13:36:57.000 ] (Id= 1007395)
+[11/19/2024 23:33:33] TWS error message: Id= 1007395; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:33] Data request for HTIG4 HKFE FUT HKD 50    1 Minute Trade [ 02/11/2024 13:03:38.000  -  02/15/2024 13:03:38.000 ] (Id= 1007396)
+[11/19/2024 23:33:34] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 12:30:19.000  -  02/15/2024 13:03:38.000 ] (Id= 1007397)
+[11/19/2024 23:33:34] TWS error message: Id= 1007397; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:34] Data request for HTIG4 HKFE FUT HKD 50    1 Minute Trade [ 02/11/2024 12:30:19.000  -  02/15/2024 12:30:19.000 ] (Id= 1007398)
+[11/19/2024 23:33:34] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 11:57:00.000  -  02/15/2024 12:30:19.000 ] (Id= 1007399)
+[11/19/2024 23:33:34] TWS error message: Id= 1007399; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:34] Data request for HTIG4 HKFE FUT HKD 50    1 Minute Trade [ 02/11/2024 11:57:00.000  -  02/15/2024 11:57:00.000 ] (Id= 1007400)
+[11/19/2024 23:33:40] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 11:23:41.000  -  02/15/2024 11:57:00.000 ] (Id= 1007401)
+[11/19/2024 23:33:40] TWS error message: Id= 1007401; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:40] Data request for HTIG4 HKFE FUT HKD 50    1 Minute Trade [ 02/11/2024 11:23:41.000  -  02/15/2024 11:23:41.000 ] (Id= 1007402)
+[11/19/2024 23:33:46] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 10:50:22.000  -  02/15/2024 11:23:41.000 ] (Id= 1007403)
+[11/19/2024 23:33:46] TWS error message: Id= 1007403; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:46] Data request for HTIG4 HKFE FUT HKD 50    1 Minute Trade [ 02/11/2024 10:50:22.000  -  02/15/2024 10:50:22.000 ] (Id= 1007404)
+[11/19/2024 23:33:58] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 10:17:03.000  -  02/15/2024 10:50:22.000 ] (Id= 1007405)
+[11/19/2024 23:33:58] TWS error message: Id= 1007405; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:33:58] Data request for HTIG4 HKFE FUT HKD 50    1 Minute Trade [ 02/11/2024 10:17:03.000  -  02/15/2024 10:17:03.000 ] (Id= 1007406)
+[11/19/2024 23:34:22] Data request for HTIG4 HKFE FUT HKD 50    1 Tick Trade [ 02/15/2024 09:43:44.000  -  02/15/2024 10:17:03.000 ] (Id= 1007407)
+[11/19/2024 23:34:22] TWS error message: Id= 1007407; code= 162; description= Historical Market Data Service error message:HMDS query returned no data: HTIG4@HKFE Trades
+[11/19/2024 23:34:22] Data request for HTIG4 HKFE FUT HKD 50    1 Minute Trade [ 02/11/2024 09:43:44.000  -  02/15/2024 09:43:44.000 ] (Id= 1007408)
