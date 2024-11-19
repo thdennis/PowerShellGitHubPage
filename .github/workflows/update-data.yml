@@ -22,7 +22,7 @@ jobs:
 
     - name: Fetch data from source
       run: |
-        curl -o data.txt "URL_TO_YOUR_SOURCE" # Replace with the URL to your source, like a Google Drive public link
+        curl -o data.txt "https://drive.google.com/file/d/1-6p05WRNFuCef8OnlkexeZP-HR-hRXYl/view?usp=sharing" # Replace with the URL to your source, like a Google Drive public link
 
     - name: Commit and push changes
       run: |
