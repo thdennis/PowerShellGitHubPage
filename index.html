@@ -73,31 +73,38 @@
                 })
                 .then(data => {
                     console.log("Fetched data:", data); // Log fetched data
-                    const lines = data.split('\n');
+                    const lines = data.split('\n').filter(line => line.trim() !== ''); // Remove any empty lines
                     let computerTime, ibTime; 
+
                     lines.forEach(line => {
                         const [key, value] = line.split(',');
-                        if (key === 'Computer') computerTime = new Date(value);
-                        if (key === 'IB') ibTime = new Date(value);
+                        if (key && value) { // Ensure both key and value exist
+                            if (key === 'Computer') {
+                                computerTime = new Date(value);
+                                console.log("Parsed Computer time:", computerTime);
+                            }
+                            if (key === 'IB') {
+                                ibTime = new Date(value);
+                                console.log("Parsed IB time:", ibTime);
+                            }
+                        }
                     });
-
-                    console.log("Parsed times - Computer:", computerTime, "IB:", ibTime);
 
                     const currentTime = new Date();
                     document.getElementById('currentTime').innerText = currentTime.toLocaleString();
-                    document.getElementById('computerCheckTime').innerText = computerTime.toLocaleString();
-                    document.getElementById('ibCheckTime').innerText = ibTime.toLocaleString();
+                    document.getElementById('computerCheckTime').innerText = computerTime ? computerTime.toLocaleString() : 'N/A';
+                    document.getElementById('ibCheckTime').innerText = ibTime ? ibTime.toLocaleString() : 'N/A';
 
-                    const timeDiffComputer = currentTime - computerTime;
-                    const timeDiffIB = currentTime - ibTime;
+                    const timeDiffComputer = computerTime ? currentTime - computerTime : NaN;
+                    const timeDiffIB = ibTime ? currentTime - ibTime : NaN;
 
-                    document.getElementById('timeDifferenceComputer').innerText = formatTimeDifference(timeDiffComputer);
-                    document.getElementById('timeDifferenceIB').innerText = formatTimeDifference(timeDiffIB);
+                    document.getElementById('timeDifferenceComputer').innerText = !isNaN(timeDiffComputer) ? formatTimeDifference(timeDiffComputer) : 'N/A';
+                    document.getElementById('timeDifferenceIB').innerText = !isNaN(timeDiffIB) ? formatTimeDifference(timeDiffIB) : 'N/A';
 
-                    if (timeDiffComputer > 1200 * 1000) {
+                    if (!isNaN(timeDiffComputer) && timeDiffComputer > 1200 * 1000) {
                         sendAlertEmail("Current Time - Computer Check Time exceeds 20 minutes.");
                     }
-                    if (timeDiffIB > 1200 * 1000) {
+                    if (!isNaN(timeDiffIB) && timeDiffIB > 1200 * 1000) {
                         sendAlertEmail("Current Time - IB Check Time exceeds 20 minutes.");
                     }
                 })
