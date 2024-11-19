@@ -27,8 +27,8 @@ jobs:
         echo "Extracting and logging check times"
         
         # Extract check times
-        computer_time=$(awk -F',' '/Computer/ {print $2}' data.txt | tr -d '\r')
-        ib_time=$(awk -F',' '/IB/ {print $2}' data.txt | tr -d '\r')
+        computer_time=$(awk -F',' '/Computer/ {print $2}' data.txt )
+        ib_time=$(awk -F',' '/IB/ {print $2}' data.txt)
         
         # Ensure times are correctly extracted
         echo "Extracted Computer Check Time: $computer_time"
