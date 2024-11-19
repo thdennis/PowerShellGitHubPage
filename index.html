@@ -1,17 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My GitHub Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Comparison</title>
 </head>
 <body>
-    <h1>Hello from GitHub Pages!</h1>
-    <pre id="content"></pre>
+    <h1>Time Comparison Results</h1>
+    <pre id="results"></pre>
+
     <script>
-        fetch('data.txt')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('content').innerText = data;
-            });
+        function compareTimes() {
+            fetch('data.txt')
+                .then(response => response.text())
+                .then(data => {
+                    const lines = data.split('\n');
+                    let computerTime, ibTime;
+                    lines.forEach(line => {
+                        const [key, value] = line.split(',');
+                        if (key === 'Computer') computerTime = new Date(value);
+                        if (key === 'IB') ibTime = new Date(value);
+                    });
+
+                    const currentTime = new Date();
+                    let results = '';
+
+                    results += 'Current time: ' + currentTime.toLocaleString() + '\\n';
+                    if (currentTime > computerTime) {
+                        results += 'Current time is later than Computer check time.\\n';
+                    } else {
+                        results += 'Current time is earlier than or equal to Computer check time.\\n';
+                    }
+
+                    if (currentTime > ibTime) {
+                        results += 'Current time is later than IB check time.\\n';
+                    } else {
+                        results += 'Current time is earlier than or equal to IB check time.\\n';
+                    }
+
+                    document.getElementById('results').innerText = results;
+                })
+                .catch(error => console.error('Error fetching data.txt:', error));
+        }
+
+        compareTimes();
+        setInterval(compareTimes, 60000); // Update every minute
     </script>
 </body>
 </html>
