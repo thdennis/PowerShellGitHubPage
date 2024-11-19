@@ -1,6 +1,0 @@
-Item on Check,Last Check Time
-Computer,11/20/2024 05:09:08
-IB,11/20/2024 05:09:08
-OK,not EOD time
-Symbol,Quantity
-HSI,0.0
