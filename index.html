@@ -15,15 +15,18 @@
         .time-difference {
             color: #d9534f;
         }
+        .value {
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <h1>Time Comparison Results</h1>
-    <p><strong>Current Time:</strong> <span id="currentTime"></span></p>
-    <p><strong>Computer Check Time:</strong> <span id="computerCheckTime"></span></p>
-    <p class="time-difference"><strong>Current Time - Computer Check Time:</strong> <span id="timeDifferenceComputer"></span></p>
-    <p><strong>IB Check Time:</strong> <span id="ibCheckTime"></span></p>
-    <p class="time-difference"><strong>Current Time - IB Check Time:</strong> <span id="timeDifferenceIB"></span></p>
+    <p><strong>Current Time:</strong> <span id="currentTime" class="value"></span></p>
+    <p><strong>Computer Check Time:</strong> <span id="computerCheckTime" class="value"></span></p>
+    <p class="time-difference"><strong>Current Time - Computer Check Time:</strong> <span id="timeDifferenceComputer" class="value"></span></p>
+    <p><strong>IB Check Time:</strong> <span id="ibCheckTime" class="value"></span></p>
+    <p class="time-difference"><strong>Current Time - IB Check Time:</strong> <span id="timeDifferenceIB" class="value"></span></p>
 
     <script>
         function formatTimeDifference(diff) {
@@ -37,5 +40,3 @@
             fetch('data.txt')
                 .then(response => response.text())
                 .then(data => {
-                    const lines = data.split('\n');
-                    let computerTime
