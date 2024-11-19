@@ -18,11 +18,17 @@
         .value {
             font-weight: bold;
         }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
     </style>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
     <script type="text/javascript">
         (function () {
             emailjs.init("0gcH1FhXdrDZ9KliN"); // Replace with your EmailJS User ID
+            console.log("EmailJS initialized");
         })();
 
         const EMAIL_INTERVAL_MS = 90 * 60 * 1000; // 90 minutes in milliseconds
@@ -37,6 +43,7 @@
         function sendErrorEmail(description) {
             const lastEmailSent = localStorage.getItem('lastEmailSent');
             const now = new Date().getTime();
+            console.log("Attempting to send error email");
 
             if (!lastEmailSent || (now - lastEmailSent) > EMAIL_INTERVAL_MS) {
                 emailjs.send("service_6wnxufr", "template_ql5oqxo", {
@@ -53,6 +60,22 @@
             } else {
                 console.log("Email not sent. Waiting for the interval to pass.");
             }
+        }
+
+        function sendDemoEmail() {
+            console.log("Attempting to send demo email");
+            emailjs.send("service_6wnxufr", "template_ql5oqxo", {
+                subject: "Test Email",
+                description: "This is a test email to demonstrate EmailJS functionality.",
+                to_email: "thdennis.dc@gmail.com"
+            })
+            .then(function(response) {
+                console.log("Demo email sent successfully!", response.status, response.text);
+                alert("Demo email sent successfully!");
+            }, function(error) {
+                console.error("Failed to send demo email.", error);
+                alert("Failed to send demo email.");
+            });
         }
 
         function compareTimes() {
@@ -78,19 +101,29 @@
                     document.getElementById('timeDifferenceComputer').innerText = formatTimeDifference(timeDiffComputer);
                     document.getElementById('timeDifferenceIB').innerText = formatTimeDifference(timeDiffIB);
 
-                    if (timeDiffComputer > 20 * 60 * 1000) { // 5 minutes in milliseconds
-                        sendErrorEmail("Current Time - Computer Check Time is greater than 00:20:00.");
+                    if (timeDiffComputer > 5 * 60 * 1000) { // 5 minutes in milliseconds
+                        sendErrorEmail("Current Time - Computer Check Time is greater than 00:05:00.");
                     }
 
-                    if (timeDiffIB > 20 * 60 * 1000) { // 5 minutes in milliseconds
-                        sendErrorEmail("Current Time - IB Check Time is greater than 00:20:00.");
+                    if (timeDiffIB > 5 * 60 * 1000) { // 5 minutes in milliseconds
+                        sendErrorEmail("Current Time - IB Check Time is greater than 00:05:00.");
                     }
                 })
                 .catch(error => console.error('Error fetching data.txt:', error));
         }
 
         compareTimes();
-        setInterval(compareTimes, 120000); // Update every minute
+        setInterval(compareTimes, 60000); // Update every minute
     </script>
+</head>
+<body>
+    <h1>Time Comparison Results</h1>
+    <p><strong>Current Time:</strong> <span id="currentTime" class="value"></span></p>
+    <p><strong>Computer Check Time:</strong> <span id="computerCheckTime" class="value"></span></p>
+    <p class="time-difference"><strong>Current Time - Computer Check Time:</strong> <span id="timeDifferenceComputer" class="value"></span></p>
+    <p><strong>IB Check Time:</strong> <span id="ibCheckTime" class="value"></span></p>
+    <p class="time-difference"><strong>Current Time - IB Check Time:</strong> <span id="timeDifferenceIB" class="value"></span></p>
+
+    <button onclick="sendDemoEmail()">Send Demo Email</button>
 </body>
 </html>
