@@ -2,7 +2,7 @@ name: Extract and Log Check Times
 
 on:
   schedule:
-    - cron: '*/29 * * * *' # Every 29 minutes
+    - cron: '*/2 * * * *' # Every 29 minutes
   push:
     branches:
       - main
