@@ -29,9 +29,9 @@ jobs:
         tr -d '\r' < data.txt > sanitized_data.txt
         cat sanitized_data.txt
         
-        # Extract check times
-        computer_time=$(grep 'Computer' sanitized_data.txt | cut -d',' -f2)
-        ib_time=$(grep 'IB' sanitized_data.txt | cut -d',' -f2)
+        # Extract check times based on line number (assuming consistent format)
+        computer_time=$(sed -n '2p' sanitized_data.txt | cut -d',' -f2)
+        ib_time=$(sed -n '3p' sanitized_data.txt | cut -d',' -f2)
         
         # Ensure times are correctly extracted
         echo "Extracted Computer Check Time: $computer_time"
