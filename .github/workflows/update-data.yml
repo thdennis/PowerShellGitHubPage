@@ -32,4 +32,4 @@ jobs:
         git commit -m "Update data.txt"
         git push
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ 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 }}
