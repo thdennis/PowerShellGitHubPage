@@ -29,11 +29,44 @@ jobs:
         echo "Fetch response code: $?"
         cat data.txt
 
-
-    - name: Log fetched data
+    - name: Process times and calculate differences
       run: |
-        echo "Logging fetched data:"
-        cat data.txt
+        echo "Processing times and calculating differences"
+        
+        # Extract check times
+        computer_time=$(grep 'Computer' data.txt | cut -d',' -f2)
+        ib_time=$(grep 'IB' data.txt | cut -d',' -f2)
+        
+        # Get current time in the same format
+        current_time=$(date -u +"%m/%d/%Y %H:%M:%S")
+        
+        # Convert times to seconds since epoch
+        computer_epoch=$(date -d "$computer_time" +%s)
+        ib_epoch=$(date -d "$ib_time" +%s)
+        current_epoch=$(date -d "$current_time" +%s)
+        
+        # Calculate time differences
+        diff_computer=$((current_epoch - computer_epoch))
+        diff_ib=$((current_epoch - ib_epoch))
+        
+        # Convert differences to hours, minutes, seconds
+        format_time_diff() {
+            local total_seconds=$1
+            local hours=$((total_seconds / 3600))
+            local minutes=$(( (total_seconds % 3600) / 60))
+            local seconds=$((total_seconds % 60))
+            printf "%02d:%02d:%02d\n" $hours $minutes $seconds
+        }
+        
+        time_diff_computer=$(format_time_diff $diff_computer)
+        time_diff_ib=$(format_time_diff $diff_ib)
+        
+        # Log the results
+        echo "Current Time: $current_time"
+        echo "Computer Check Time: $computer_time"
+        echo "IB Check Time: $ib_time"
+        echo "Time Difference - Current Time vs Computer Check Time: $time_diff_computer"
+        echo "Time Difference - Current Time vs IB Check Time: $time_diff_ib"
 
     - name: Commit and push changes
       run: |
