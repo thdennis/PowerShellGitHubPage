@@ -64,6 +64,11 @@
             }
         }
 
+        function parseDate(dateString) {
+            // Adjust the date parsing as per the expected format from data.txt
+            return new Date(dateString);
+        }
+
         function compareTimes() {
             fetch('data.txt')
                 .then(response => {
@@ -81,11 +86,11 @@
                         const [key, value] = line.split(',');
                         if (key && value) { // Ensure both key and value exist
                             if (key === 'Computer') {
-                                computerTime = new Date(value);
+                                computerTime = parseDate(value);
                                 console.log("Parsed Computer time:", computerTime);
                             }
                             if (key === 'IB') {
-                                ibTime = new Date(value);
+                                ibTime = parseDate(value);
                                 console.log("Parsed IB time:", ibTime);
                             }
                         }
