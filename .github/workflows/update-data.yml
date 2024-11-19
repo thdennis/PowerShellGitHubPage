@@ -24,10 +24,12 @@ jobs:
 
     - name: Fetch data from source
       run: |
+        echo "Fetching data from source"
         curl -o data.txt "https://drive.google.com/uc?export=download&id=1-6p05WRNFuCef8OnlkexeZP-HR-hRXYl" # Direct download link
 
     - name: Log fetched data
       run: |
+        echo "Logging fetched data:"
         cat data.txt
 
     - name: Commit and push changes
