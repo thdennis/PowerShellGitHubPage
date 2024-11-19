@@ -41,7 +41,7 @@
                 .then(response => response.text())
                 .then(data => {
                     const lines = data.split('\n');
-                    let computerTime, ibTime;
+                    let computerTime, ibTime; 
                     lines.forEach(line => {
                         const [key, value] = line.split(',');
                         if (key === 'Computer') computerTime = new Date(value);
