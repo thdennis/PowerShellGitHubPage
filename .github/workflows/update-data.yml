@@ -25,7 +25,9 @@ jobs:
     - name: Fetch data from source
       run: |
         echo "Fetching data from source"
-        curl -o data.txt "https://drive.google.com/uc?export=download&id=1-6p05WRNFuCef8OnlkexeZP-HR-hRXYl" # Direct download link
+        curl -o data.txt -w "%{http_code}" "https://drive.google.com/uc?export=download&id=1-6p05WRNFuCef8OnlkexeZP-HR-hRXYl" 
+        echo "Fetch response code: $?"
+        cat data.txt
 
     - name: Log fetched data
       run: |
