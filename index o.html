@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Comparison</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; 
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .time-difference {
+            color: #d9534f;
+        }
+        .value {
+            font-weight: bold;
+        }
+    </style>
+    <!-- Use the latest version of the EmailJS SDK from CDN -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@latest/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("7tS3TMQkimjiJq10t"); // Replace with your EmailJS public key
+            console.log("EmailJS initialized with public key");
+        })();
+
+        let lastAlertTimestamp = 0;
+        let emailSendingEnabled = false; // Set to false to disable email sending
+
+        function formatTimeDifference(diff) {
+            const hours = Math.floor(diff / (1000 * 60 * 60)).toString().padStart(2, '0');
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
+            return `${hours}:${minutes}:${seconds}`;
+        }
+
+        function sendAlertEmail(description) {
+            const now = new Date().getTime();
+            if (now - lastAlertTimestamp > 90 * 60 * 1000) { // 90 minutes in milliseconds
+                console.log("Attempting to send alert email");
+                if (emailSendingEnabled) {
+                    emailjs.send("service_6wnxufr", "template_ql5oqxo", {
+                        subject: "Alert: Time Difference Exceeded",
+                        description: description,
+                        to_email: "thdennis.dc@gmail.com"
+                    })
+                    .then(function(response) {
+                        console.log("Alert email sent successfully!", response.status, response.text);
+                        alert("Alert email sent successfully!");
+                        lastAlertTimestamp = now;
+                    }, function(error) {
+                        console.error("Failed to send alert email:", error);
+                        alert("Failed to send alert email.");
+                    });
+                } else {
+                    console.log("Email sending disabled for troubleshooting. Description:", description);
+                }
+            } else {
+                console.log("Alert email not sent due to cooldown period.");
+            }
+        }
+
+        function compareTimes() {
+            fetch('https://raw.githubusercontent.com/thdennis/PowerShellGitHubPage/main/data.txt')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    console.log("Fetched data:", data); // Log fetched data
+                    const lines = data.split('\n');
+                    let computerTime, ibTime; 
+                    lines.forEach(line => {
+                        const [key, value] = line.split(',');
+                        if (key === 'Computer') computerTime = new Date(value);
+                        if (key === 'IB') ibTime = new Date(value);
+                    });
+
+                    console.log("Parsed times - Computer:", computerTime, "IB:", ibTime);
+
+                    const currentTime = new Date();
+                    document.getElementById('currentTime').innerText = currentTime.toLocaleString();
+                    document.getElementById('computerCheckTime').innerText = computerTime.toLocaleString();
+                    document.getElementById('ibCheckTime').innerText = ibTime.toLocaleString();
+
+                    const timeDiffComputer = currentTime - computerTime;
+                    const timeDiffIB = currentTime - ibTime;
+
+                    document.getElementById('timeDifferenceComputer').innerText = formatTimeDifference(timeDiffComputer);
+                    document.getElementById('timeDifferenceIB').innerText = formatTimeDifference(timeDiffIB);
+
+                    if (timeDiffComputer > 1200 * 1000) {
+                        sendAlertEmail("Current Time - Computer Check Time exceeds 20 minutes.");
+                    }
+                    if (timeDiffIB > 1200 * 1000) {
+                        sendAlertEmail("Current Time - IB Check Time exceeds 20 minutes.");
+                    }
+                })
+                .catch(error => console.error('Error:', error.message));
+        }
+
+        compareTimes();
+        setInterval(compareTimes, 120000); // Update every 2 minutes
+    </script>
+</head>
+<body>
+    <h1>Time Comparison Results</h1>
+    <p><strong>Current Time:</strong> <span id="currentTime" class="value"></span></p>
+    <p><strong>Computer Check Time:</strong> <span id="computerCheckTime" class="value"></span></p>
+    <p class="time-difference"><strong>Current Time - Computer Check Time:</strong> <span id="timeDifferenceComputer" class="value"></span></p>
+    <p><strong>IB Check Time:</strong> <span id="ibCheckTime" class="value"></span></p>
+    <p class="time-difference"><strong>Current Time - IB Check Time:</strong> <span id="timeDifferenceIB" class="value"></span></p>
+</body>
+</html>
