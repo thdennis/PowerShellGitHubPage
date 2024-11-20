@@ -49,9 +49,9 @@ jobs:
         ib_time=$(echo "$third_line" | cut -d',' -f2)
         echo "Extracted IB Check Time: \"$ib_time\""
 
-        # Get current time in the same format
-        current_time=$(date +"%m/%d/%Y %H:%M:%S")
-        echo "Current Time: $current_time"
+        # Convert current time to HKT and log it
+        current_time=$(TZ='Asia/Hong_Kong' date +"%m/%d/%Y %H:%M:%S")
+        echo "Current Time (HKT): $current_time"
         
         # Convert times to seconds since epoch
         computer_epoch=$(date -d "$computer_time" +%s)
