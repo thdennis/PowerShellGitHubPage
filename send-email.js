@@ -1,3 +1,5 @@
+global.location = { protocol: 'https:' };  // Mock the location object
+
 const emailjs = require('@emailjs/browser');
 require('dotenv').config();
 
