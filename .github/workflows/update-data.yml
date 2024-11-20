@@ -1,4 +1,4 @@
-name: Send Email via EmailJS
+name: Send Email
 
 on:
   schedule:
@@ -14,14 +14,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
-
-    - name: Install dependencies
-      run: npm install
 
     - name: Fetch data from source
       run: |
@@ -62,6 +54,19 @@ jobs:
         echo "Time Difference - Current Time vs IB Check Time: \"$time_diff_ib\""
 
     - name: Send email via EmailJS
-      env:
-        EMAILJS_PUBLIC_KEY: ${{ secrets.EMAILJS_PUBLIC_KEY }}
-      run: npm run send-email
+      run: |
+        echo "Sending email via EmailJS"
+        curl -X POST \
+          -H "Content-Type: application/json" \
+          -H "Authorization: Bearer ${{ secrets.EMAILJS_PRIVATE_KEY }}" \
+          -d '{
+              "service_id": "'"${{ secrets.EMAILJS_SERVICE_ID }}"'",
+              "template_id": "'"${{ secrets.EMAILJS_TEMPLATE_ID }}"'",
+              "user_id": "'"${{ secrets.EMAILJS_USER_ID }}"'",
+              "template_params": {
+                "name": "User",
+                "notes": "Email sent from GitHub Actions!"
+              }
+            }' \
+          https://api.emailjs.com/api/v1.0/email/send
+        echo "Email sent"
