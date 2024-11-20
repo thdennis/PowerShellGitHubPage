@@ -10,7 +10,7 @@ const templateParams = {
   notes: 'Email sent from GitHub Actions!'
 };
 
-emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+emailjs.send('service_6wnxufr', 'template_ql5oqxo', templateParams)
   .then((response) => {
     console.log('SUCCESS!', response.status, response.text);
   }, (error) => {
