@@ -1,4 +1,5 @@
 const fetch = require('node-fetch');
+require('dotenv').config();  // Load environment variables from .env file
 
 const sendEmail = async () => {
   try {
