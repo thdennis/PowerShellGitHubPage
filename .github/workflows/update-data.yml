@@ -2,7 +2,7 @@ name: Update data.txt
 
 on:
   schedule:
-    - cron: '*/29 * * * *' # Every 2 minutes 
+    - cron: '*/29 * * * *' # Every 29 minutes
   push:
     branches:
       - main
@@ -33,16 +33,25 @@ jobs:
       run: |
         echo "Processing times and calculating differences"
         
-        # Extract check times
-        computer_time=$(awk -F, '/Computer/ {gsub(/\r/, "", $2); print $2}' data.txt)
-        ib_time=$(awk -F, '/IB/ {gsub(/\r/, "", $2); print $2}' data.txt)
+        # Extract entire second line
+        second_line=$(sed -n '2p' data.txt)
+        echo "Entire Second Line: \"$second_line\""
+
+        # Extract time from the second line
+        computer_time=$(echo "$second_line" | cut -d',' -f2)
+        echo "Extracted Computer Check Time: \"$computer_time\""
         
-        # Ensure times are correctly extracted
-        echo "Extracted Computer Check Time: $computer_time"
-        echo "Extracted IB Check Time: $ib_time"
-        
+        # Extract entire third line
+        third_line=$(sed -n '3p' data.txt)
+        echo "Entire Third Line: \"$third_line\""
+
+        # Extract time from the third line
+        ib_time=$(echo "$third_line" | cut -d',' -f2)
+        echo "Extracted IB Check Time: \"$ib_time\""
+
         # Get current time in the same format
         current_time=$(date -u +"%m/%d/%Y %H:%M:%S")
+        echo "Current Time: $current_time"
         
         # Convert times to seconds since epoch
         computer_epoch=$(date -d "$computer_time" +%s)
@@ -66,9 +75,6 @@ jobs:
         time_diff_ib=$(format_time_diff $diff_ib)
         
         # Log the results
-        echo "Current Time: $current_time"
-        echo "Computer Check Time: $computer_time"
-        echo "IB Check Time: $ib_time"
         echo "Time Difference - Current Time vs Computer Check Time: $time_diff_computer"
         echo "Time Difference - Current Time vs IB Check Time: $time_diff_ib"
 
