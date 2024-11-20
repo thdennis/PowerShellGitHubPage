@@ -105,6 +105,12 @@ jobs:
           echo "output.txt does not exist"
         fi
 
+    - name: Upload output.txt as artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: output-log
+        path: output.txt
+
     - name: Send email via Gmail SMTP
       if: env.SEND_EMAIL == 'true'
       env:
