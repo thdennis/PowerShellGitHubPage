@@ -2,7 +2,7 @@ name: Extract and Log Check Times
 
 on:
   schedule:
-    - cron: '*/2 * * * *' # Every 29 minutes
+    - cron: '*/29 * * * *' # Every 29 minutes
   push:
     branches:
       - main
@@ -26,34 +26,61 @@ jobs:
       run: |
         echo "Extracting and logging check times"
         
-        # Attempt to extract entire second line
+        # Extract entire second line
         second_line=$(sed -n '2p' data.txt)
-        if [ -z "$second_line" ]; then
-          echo "Failed to fetch line 2."
-        else
-          echo "Entire Second Line: \"$second_line\""
-        fi
         
-        # Attempt to extract time from the second line
+        # Log the entire second line
+        echo "Entire Second Line: \"$second_line\""
+
+        # Extract time from the second line
         computer_time=$(echo "$second_line" | cut -d',' -f2)
-        if [ -z "$computer_time" ]; then
-          echo "Failed to extract Computer Check Time from line 2."
-        else
-          echo "Extracted Computer Check Time: \"$computer_time\""
-        fi
         
-        # Attempt to extract entire third line
+        # Ensure time is correctly extracted
+        echo "Extracted Computer Check Time: \"$computer_time\""
+        
+        # Extract entire third line
         third_line=$(sed -n '3p' data.txt)
-        if [ -z "$third_line" ]; then
-          echo "Failed to fetch line 3."
-        else
-          echo "Entire Third Line: \"$third_line\""
-        fi
         
-        # Attempt to extract time from the third line
+        # Log the entire third line
+        echo "Entire Third Line: \"$third_line\""
+        
+        # Extract time from the third line
         ib_time=$(echo "$third_line" | cut -d',' -f2)
-        if [ -z "$ib_time" ]; then
-          echo "Failed to extract IB Check Time from line 3."
-        else
-          echo "Extracted IB Check Time: \"$ib_time\""
-        fi
+        
+        # Ensure time is correctly extracted
+        echo "Extracted IB Check Time: \"$ib_time\""
+
+    - name: Calculate and log time differences
+      run: |
+        echo "Calculating and logging time differences"
+
+        # Get current time in the same format
+        current_time=$(date -u +"%m/%d/%Y %H:%M:%S")
+        
+        # Log current time
+        echo "Current Time: \"$current_time\""
+        
+        # Convert times to seconds since epoch
+        computer_epoch=$(date -d "$computer_time" +%s)
+        ib_epoch=$(date -d "$ib_time" +%s)
+        current_epoch=$(date -d "$current_time" +%s)
+        
+        # Calculate time differences
+        diff_computer=$((current_epoch - computer_epoch))
+        diff_ib=$((current_epoch - ib_epoch))
+        
+        # Convert differences to hours, minutes, seconds
+        format_time_diff() {
+            local total_seconds=$1
+            local hours=$((total_seconds / 3600))
+            local minutes=$(( (total_seconds % 3600) / 60))
+            local seconds=$((total_seconds % 60))
+            printf "%02d:%02d:%02d\n" $hours $minutes $seconds
+        }
+        
+        time_diff_computer=$(format_time_diff $diff_computer)
+        time_diff_ib=$(format_time_diff $diff_ib)
+        
+        # Log the results
+        echo "Time Difference - Current Time vs Computer Check Time: \"$time_diff_computer\""
+        echo "Time Difference - Current Time vs IB Check Time: \"$time_diff_ib\""
