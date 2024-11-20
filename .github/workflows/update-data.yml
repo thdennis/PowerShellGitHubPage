@@ -1,4 +1,4 @@
-name: Update data.txt
+name: Update data.txt 
 
 on:
   schedule:
