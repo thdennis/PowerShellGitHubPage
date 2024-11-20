@@ -72,15 +72,15 @@ jobs:
         echo "Time Difference - Current Time vs Computer Check Time: \"$time_diff_computer\""
         echo "Time Difference - Current Time vs IB Check Time: \"$time_diff_ib\""
 
-        echo "Creating and writing to output.txt"
-        touch output.txt
-        echo "Current Time (HKT): $current_time" >> output.txt
+        echo "Overwriting and writing to output.txt"
+        echo "Current Time (HKT): $current_time" > output.txt
         echo "Computer Check Time: $computer_time" >> output.txt
         echo "IB Check Time: $ib_time" >> output.txt
         echo "Time Difference - Current Time vs Computer Check Time: $time_diff_computer" >> output.txt
         echo "Time Difference - Current Time vs IB Check Time: $time_diff_ib" >> output.txt
         echo "time_diff_computer=$time_diff_computer" >> output.txt
         echo "time_diff_ib=$time_diff_ib" >> output.txt
+        echo "DEBUG: Content of output.txt after writing:"
         cat output.txt
 
         if [ $diff_computer -gt 1200 ] || [ $diff_ib -gt 1200 ]; then
@@ -95,7 +95,7 @@ jobs:
         echo "DEBUG: diff_computer: $diff_computer"
         echo "DEBUG: diff_ib: $diff_ib"
         echo "DEBUG: Environment SEND_EMAIL: ${{ env.SEND_EMAIL }}"
-        echo "DEBUG: Content of output.txt:"
+        echo "DEBUG: Final Content of output.txt:"
         cat output.txt
 
     - name: Send email via Gmail SMTP
