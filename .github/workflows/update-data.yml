@@ -3,7 +3,7 @@ name: Send Email via EmailJS
 on:
   schedule:
     - cron: '*/29 * * * *' # Every 29 minutes
-  push:
+  push: 
     branches:
       - main
 
