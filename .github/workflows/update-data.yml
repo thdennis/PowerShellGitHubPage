@@ -3,7 +3,7 @@ name: Send Email via EmailJS
 on:
   schedule:
     - cron: '*/29 * * * *' # Every 29 minutes
-  push: 
+  push:
     branches:
       - main
 
@@ -62,4 +62,6 @@ jobs:
         echo "Time Difference - Current Time vs IB Check Time: \"$time_diff_ib\""
 
     - name: Send email via EmailJS
+      env:
+        EMAILJS_PUBLIC_KEY: ${{ secrets.EMAILJS_PUBLIC_KEY }}
       run: npm run send-email
