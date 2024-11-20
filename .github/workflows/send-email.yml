@@ -1,7 +1,7 @@
-name: Send Email via EmailJS2
+name: Send Email via Gmail SMTP
 
 on:
-  workflow_dispatch: # This allows you to manually trigger the workflow for debugging
+  workflow_dispatch:
 
 jobs:
   send-email:
@@ -19,10 +19,37 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Send email via EmailJS
+    - name: Send email via Gmail SMTP
       env:
-        EMAILJS_PRIVATE_KEY: ${{ secrets.EMAILJS_PRIVATE_KEY }}
-        EMAILJS_SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}
-        EMAILJS_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
-        EMAILJS_USER_ID: ${{ secrets.EMAILJS_USER_ID }}
-      run: node send-email.js
+        SMTP_SERVER: smtp.gmail.com
+        SMTP_PORT: 587
+        SMTP_USER: ${{ secrets.GMAIL_USER }}
+        SMTP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        EMAIL_TO: recipient@example.com
+      run: |
+        echo "Sending email..."
+        node -e "
+          const nodemailer = require('nodemailer');
+          const transporter = nodemailer.createTransport({
+            host: process.env.SMTP_SERVER,
+            port: process.env.SMTP_PORT,
+            secure: false,
+            auth: {
+              user: process.env.SMTP_USER,
+              pass: process.env.SMTP_PASSWORD
+            }
+          });
+          const message = {
+            from: 'Your Name <${{ secrets.GMAIL_USER }}>',
+            to: process.env.EMAIL_TO,
+            subject: 'Hello from GitHub Actions',
+            text: 'This is a test email sent from GitHub Actions using Gmail SMTP.'
+          };
+          transporter.sendMail(message, (error, info) => {
+            if (error) {
+              console.log('Error: ', error);
+            } else {
+              console.log('Email sent: ', info.response);
+            }
+          });
+        "
