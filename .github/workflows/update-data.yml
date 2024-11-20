@@ -106,7 +106,7 @@ jobs:
         fi
 
     - name: Upload output.txt as artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: output-log
         path: output.txt
