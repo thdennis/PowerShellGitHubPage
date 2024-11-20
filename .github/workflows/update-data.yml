@@ -74,6 +74,11 @@ jobs:
 
         echo "Creating and writing to output.txt"
         touch output.txt
+        echo "Current Time (HKT): $current_time" >> output.txt
+        echo "Computer Check Time: $computer_time" >> output.txt
+        echo "IB Check Time: $ib_time" >> output.txt
+        echo "Time Difference - Current Time vs Computer Check Time: $time_diff_computer" >> output.txt
+        echo "Time Difference - Current Time vs IB Check Time: $time_diff_ib" >> output.txt
         echo "time_diff_computer=$time_diff_computer" >> output.txt
         echo "time_diff_ib=$time_diff_ib" >> output.txt
         cat output.txt
