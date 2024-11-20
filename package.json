@@ -1,5 +1,5 @@
 {
-  "name": "github-action-emailjs",
+  "name": "github-action-emailjs", 
   "version": "1.0.0",
   "description": "",
   "main": "send-email.js",
