@@ -50,7 +50,7 @@ jobs:
         echo "Extracted IB Check Time: \"$ib_time\""
 
         # Get current time in the same format
-        current_time=$(date -u +"%m/%d/%Y %H:%M:%S")
+        current_time=$(date +"%m/%d/%Y %H:%M:%S")
         echo "Current Time: $current_time"
         
         # Convert times to seconds since epoch
@@ -75,8 +75,8 @@ jobs:
         time_diff_ib=$(format_time_diff $diff_ib)
         
         # Log the results
-        echo "Time Difference - Current Time vs Computer Check Time: $time_diff_computer"
-        echo "Time Difference - Current Time vs IB Check Time: $time_diff_ib"
+        echo "Time Difference - Current Time vs Computer Check Time: \"$time_diff_computer\""
+        echo "Time Difference - Current Time vs IB Check Time: \"$time_diff_ib\""
 
     - name: Commit and push changes
       run: |
