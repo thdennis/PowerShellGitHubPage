@@ -1,4 +1,4 @@
-name: Send Email
+name: Send Email via EmailJS
 
 on:
   schedule:
@@ -25,20 +25,36 @@ jobs:
       run: |
         echo "Processing times and calculating differences"
         
+        # Extract entire second line
         second_line=$(sed -n '2p' data.txt)
+        echo "Entire Second Line: \"$second_line\""
+        
+        # Extract time from the second line
         computer_time=$(echo "$second_line" | cut -d',' -f2)
+        echo "Extracted Computer Check Time: \"$computer_time\""
+        
+        # Extract entire third line
         third_line=$(sed -n '3p' data.txt)
+        echo "Entire Third Line: \"$third_line\""
+        
+        # Extract time from the third line
         ib_time=$(echo "$third_line" | cut -d',' -f2)
+        echo "Extracted IB Check Time: \"$ib_time\""
         
+        # Convert current time to HKT and log it
         current_time=$(TZ='Asia/Hong_Kong' date +"%m/%d/%Y %H:%M:%S")
+        echo "Current Time (HKT): $current_time"
         
+        # Convert times to seconds since epoch
         computer_epoch=$(date -d "$computer_time" +%s)
         ib_epoch=$(date -d "$ib_time" +%s)
         current_epoch=$(date -d "$current_time" +%s)
         
+        # Calculate time differences
         diff_computer=$((current_epoch - computer_epoch))
         diff_ib=$((current_epoch - ib_epoch))
         
+        # Convert differences to hours, minutes, seconds
         format_time_diff() {
             local total_seconds=$1
             local hours=$((total_seconds / 3600))
@@ -58,7 +74,7 @@ jobs:
         echo "Sending email via EmailJS"
         curl -X POST \
           -H "Content-Type: application/json" \
-          -H "Authorization: Bearer ${{ secrets.EMAILJS_PRIVATE_KEY }}" \
+          -H "Authorization: Bearer ${{ secrets.EMAILJS_PUBLIC_KEY }}" \
           -d '{
               "service_id": "'"${{ secrets.EMAILJS_SERVICE_ID }}"'",
               "template_id": "'"${{ secrets.EMAILJS_TEMPLATE_ID }}"'",
