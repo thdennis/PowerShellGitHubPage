@@ -35,18 +35,28 @@ jobs:
         echo "Processing times and calculating differences"
         
         second_line=$(sed -n '2p' data.txt)
+        echo "DEBUG: second_line: $second_line"
         computer_time=$(echo "$second_line" | cut -d',' -f2)
+        echo "DEBUG: computer_time: $computer_time"
         third_line=$(sed -n '3p' data.txt)
+        echo "DEBUG: third_line: $third_line"
         ib_time=$(echo "$third_line" | cut -d',' -f2)
+        echo "DEBUG: ib_time: $ib_time"
         
         current_time=$(TZ='Asia/Hong_Kong' date +"%m/%d/%Y %H:%M:%S")
+        echo "DEBUG: current_time: $current_time"
         
         computer_epoch=$(date -d "$computer_time" +%s)
+        echo "DEBUG: computer_epoch: $computer_epoch"
         ib_epoch=$(date -d "$ib_time" +%s)
+        echo "DEBUG: ib_epoch: $ib_epoch"
         current_epoch=$(date -d "$current_time" +%s)
+        echo "DEBUG: current_epoch: $current_epoch"
         
         diff_computer=$((current_epoch - computer_epoch))
+        echo "DEBUG: diff_computer: $diff_computer"
         diff_ib=$((current_epoch - ib_epoch))
+        echo "DEBUG: diff_ib: $diff_ib"
         
         format_time_diff() {
             local total_seconds=$1
