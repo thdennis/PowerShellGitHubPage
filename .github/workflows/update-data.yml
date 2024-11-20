@@ -1,8 +1,8 @@
-name: Send Email via Gmail 
+name: Send Email via Gmail SMTP
 
 on:
   schedule:
-    - cron: '*/29 * * * *' # Every 29 minutes
+    - cron: '0 * * * *' # Run the job every hour
   push:
     branches:
       - main
@@ -30,6 +30,7 @@ jobs:
         cat data.txt
 
     - name: Process times and calculate differences
+      id: process_times
       run: |
         echo "Processing times and calculating differences"
         
@@ -61,13 +62,20 @@ jobs:
         echo "Time Difference - Current Time vs Computer Check Time: \"$time_diff_computer\""
         echo "Time Difference - Current Time vs IB Check Time: \"$time_diff_ib\""
 
+        if [ $diff_computer -gt 00 ] || [ $diff_ib -gt 00 ]; then
+            echo "SEND_EMAIL=true" >> $GITHUB_ENV
+        else
+            echo "SEND_EMAIL=false" >> $GITHUB_ENV
+        fi
+
     - name: Send email via Gmail SMTP
+      if: env.SEND_EMAIL == 'true'
       env:
         SMTP_SERVER: smtp.gmail.com
         SMTP_PORT: 587
         SMTP_USER: ${{ secrets.GMAIL_USER }}
         SMTP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-        EMAIL_TO: recipient@example.com
+        EMAIL_TO: thdennis.dc@gmail.com
       run: |
         echo "Sending email..."
         node -e "
@@ -84,8 +92,8 @@ jobs:
           const message = {
             from: 'Your Name <${{ secrets.GMAIL_USER }}>',
             to: process.env.EMAIL_TO,
-            subject: 'Hello from GitHub Actions',
-            text: 'Time Difference - Current Time vs Computer Check Time: \"$time_diff_computer\"'
+            subject: 'Alert from GitHub Actions',
+            text: 'Time Difference - Current Time vs Computer Check Time: ${{ steps.process_times.outputs.time_diff_computer }}\nTime Difference - Current Time vs IB Check Time: ${{ steps.process_times.outputs.time_diff_ib }}'
           };
           transporter.sendMail(message, (error, info) => {
             if (error) {
