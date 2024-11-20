@@ -90,28 +90,30 @@ jobs:
         alert_email() {
             curl -X POST \
             -H "Content-Type: application/json" \
-            -d '{}' https://api.emailjs.com/api/v1.0/email/send
+            -d '{
+                "service_id": "service_6wnxufr",
+                "template_id": "template_ql5oqxo",
+                "user_id": "7tS3TMQkimjiJq10t"
+            }' https://api.emailjs.com/api/v1.0/email/send
         }
 
         # Check if time differences exceed 00:20:00 and send email if they do
         send_alert=false
-        if [[ "$time_diff_computer" > "00:20:00" ]]; then
+        if [[ "$time_diff_computer" > "00:00:00" ]]; then
             echo "Time Difference - Current Time vs Computer Check Time exceeds 20 minutes."
             send_alert=true
-            alert_message="Current Time - Computer Check Time exceeds 20 minutes."
         fi
 
         if [[ "$time_diff_ib" > "00:20:00" ]]; then
             echo "Time Difference - Current Time vs IB Check Time exceeds 20 minutes."
             send_alert=true
-            alert_message="Current Time - IB Check Time exceeds 20 minutes."
         fi
 
         now=$(date +%s)
         echo "Current Epoch Time: $now"
         if [ "$send_alert" = true ] && [ $((now - last_alert_timestamp)) -gt 5400 ]; then
             echo "Sending alert email."
-            alert_email "$alert_message"
+            alert_email
             echo "$now" > "$last_alert_timestamp_file"
         else
             echo "Alert not sent due to cooldown period or no condition met."
@@ -119,7 +121,7 @@ jobs:
 
         # Send a demo email to test the email feature
         echo "Sending demo email for testing purposes."
-        alert_email "This is a demo email to test the EmailJS integration."
+        alert_email
 
     - name: Commit and push changes
       run: |
