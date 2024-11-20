@@ -74,7 +74,6 @@ jobs:
         echo "Sending email via EmailJS"
         curl -X POST \
           -H "Content-Type: application/json" \
-          -H "Authorization: Bearer ${{ secrets.EMAILJS_PRIVATE_KEY }}" \
           -d '{
               "service_id": "'"${{ secrets.EMAILJS_SERVICE_ID }}"'",
               "template_id": "'"${{ secrets.EMAILJS_TEMPLATE_ID }}"'",
@@ -84,5 +83,5 @@ jobs:
                 "notes": "Email sent from GitHub Actions!"
               }
             }' \
-          https://api.emailjs.com/api/v1.0/email/send
+          https://api.emailjs.com/api/v1.0/email/send?publicKey=${{ secrets.EMAILJS_PUBLIC_KEY }}
         echo "Email sent"
