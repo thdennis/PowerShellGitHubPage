@@ -99,7 +99,7 @@ jobs:
 
         # Check if time differences exceed 00:20:00 and send email if they do
         send_alert=false
-        if [[ "$time_diff_computer" > "00:00:00" ]]; then
+        if [[ "$time_diff_computer" > "00:20:00" ]]; then
             echo "Time Difference - Current Time vs Computer Check Time exceeds 20 minutes."
             send_alert=true
         fi
