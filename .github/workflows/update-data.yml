@@ -2,7 +2,7 @@ name: Send Email via Gmail
 
 on:
   schedule:
-    - cron: '*/3 * * * *' # Run the job every minute
+    - cron: '*/1 * * * *' # Run the job every minute
   push:
     branches:
       - main
