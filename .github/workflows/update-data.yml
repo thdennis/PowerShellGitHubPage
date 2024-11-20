@@ -91,6 +91,7 @@ jobs:
           echo "0" > "$last_alert_timestamp_file"
         fi
         last_alert_timestamp=$(cat "$last_alert_timestamp_file")
+        echo "Last Alert Timestamp: $last_alert_timestamp"
 
         # Function to send email via EmailJS
         alert_email() {
@@ -114,10 +115,13 @@ jobs:
         fi
 
         now=$(date +%s)
+        echo "Current Epoch Time: $now"
         if [ "$send_alert" = true ] && [ $((now - last_alert_timestamp)) -gt 5400 ]; then
             echo "Sending alert email."
             alert_email "$alert_message"
             echo "$now" > "$last_alert_timestamp_file"
+        else
+            echo "Alert not sent due to cooldown period or no condition met."
         fi
 
         # Send a demo email to test the email feature
