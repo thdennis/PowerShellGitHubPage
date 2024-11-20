@@ -19,6 +19,18 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    - name: Log Environment Variables for Debugging
+      run: |
+        echo "EMAILJS_PRIVATE_KEY: ${EMAILJS_PRIVATE_KEY}"
+        echo "EMAILJS_SERVICE_ID: ${EMAILJS_SERVICE_ID}"
+        echo "EMAILJS_TEMPLATE_ID: ${EMAILJS_TEMPLATE_ID}"
+        echo "EMAILJS_USER_ID: ${EMAILJS_USER_ID}"
+      env:
+        EMAILJS_PRIVATE_KEY: ${{ secrets.EMAILJS_PRIVATE_KEY }}
+        EMAILJS_SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}
+        EMAILJS_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
+        EMAILJS_USER_ID: ${{ secrets.EMAILJS_USER_ID }}
+
     - name: Send email via EmailJS
       env:
         EMAILJS_PRIVATE_KEY: ${{ secrets.EMAILJS_PRIVATE_KEY }}
