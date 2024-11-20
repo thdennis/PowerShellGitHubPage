@@ -96,16 +96,7 @@ jobs:
         alert_email() {
             curl -X POST \
             -H "Content-Type: application/json" \
-            -d '{
-                "service_id": "service_6wnxufr",
-                "template_id": "template_ql5oqxo",
-                "user_id": "7tS3TMQkimjiJq10t",
-                "template_params": {
-                    "subject": "Alert: Time Difference Exceeded",
-                    "description": "'"$1"'",
-                    "to_email": "thdennis.dc@gmail.com"
-                }
-            }' https://api.emailjs.com/api/v1.0/email/send
+            -d '{}' https://api.emailjs.com/api/v1.0/email/send
         }
 
         # Check if time differences exceed 00:20:00 and send email if they do
