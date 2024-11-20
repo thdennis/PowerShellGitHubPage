@@ -25,7 +25,7 @@ jobs:
         SMTP_PORT: 587
         SMTP_USER: ${{ secrets.GMAIL_USER }}
         SMTP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-        EMAIL_TO: recipient@example.com
+        EMAIL_TO: thdennis.dc@gmail.com
       run: |
         echo "Sending email..."
         node -e "
