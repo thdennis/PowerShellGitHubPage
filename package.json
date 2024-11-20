@@ -1,0 +1,14 @@
+{
+  "name": "github-action-emailjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "send-email.js",
+  "scripts": {
+    "send-email": "node send-email.js"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^2.6.4"
+  },
+  "author": "",
+  "license": "ISC"
+}
