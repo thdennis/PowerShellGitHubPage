@@ -1,9 +1,14 @@
 const fetch = require('node-fetch');
-require('dotenv').config();  // Load environment variables from .env file
+require('dotenv').config();
 
 const sendEmail = async () => {
   try {
     console.log('Preparing to send email...');
+    console.log('EMAILJS_PRIVATE_KEY:', process.env.EMAILJS_PRIVATE_KEY ? 'Exists' : 'Not Found');
+    console.log('EMAILJS_SERVICE_ID:', process.env.EMAILJS_SERVICE_ID);
+    console.log('EMAILJS_TEMPLATE_ID:', process.env.EMAILJS_TEMPLATE_ID);
+    console.log('EMAILJS_USER_ID:', process.env.EMAILJS_USER_ID);
+
     const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
       method: 'POST',
       headers: {
