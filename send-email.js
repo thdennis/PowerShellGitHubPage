@@ -3,8 +3,7 @@ require('dotenv').config();
 
 const sendEmail = async () => {
   try {
-    const authorizationHeader = `Bearer ${process.env.EMAILJS_PRIVATE_KEY}`;
-    console.log('Authorization Header:', authorizationHeader);
+    const apiUrl = `https://api.emailjs.com/api/v1.0/email/send?privateKey=${process.env.EMAILJS_PRIVATE_KEY}`;
 
     console.log('Preparing to send email...');
     console.log('EMAILJS_PRIVATE_KEY:', process.env.EMAILJS_PRIVATE_KEY ? 'Exists' : 'Not Found');
@@ -12,11 +11,10 @@ const sendEmail = async () => {
     console.log('EMAILJS_TEMPLATE_ID:', process.env.EMAILJS_TEMPLATE_ID);
     console.log('EMAILJS_USER_ID:', process.env.EMAILJS_USER_ID);
 
-    const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+    const response = await fetch(apiUrl, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': authorizationHeader
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         service_id: process.env.EMAILJS_SERVICE_ID,
