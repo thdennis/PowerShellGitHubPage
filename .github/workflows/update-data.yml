@@ -25,7 +25,7 @@ jobs:
     - name: Fetch data from source
       run: |
         echo "Fetching data from source"
-        curl -L -o data.txt "https://drive.google.com/uc?export=download&id=1-6p05WRNFuCef8OnlkexeZP-HR-hRXYl" # Direct download link
+        curl -L -o data.txt "https://drive.google.com/uc?export=download&id=1-6p05WRNFuCef8OnlkexeZP-HR-hRXYl"
         echo "Fetch response code: $?"
         cat data.txt
 
@@ -77,8 +77,8 @@ jobs:
         # Log the results
         echo "Time Difference - Current Time vs Computer Check Time: \"$time_diff_computer\""
         echo "Time Difference - Current Time vs IB Check Time: \"$time_diff_ib\""
-        
-        # Check if time differences exceed 00:20:00 and send email if they do
+
+        # Function to send email via EmailJS
         alert_email() {
             curl -X POST \
             -H "Content-Type: application/json" \
@@ -94,13 +94,20 @@ jobs:
             }' https://api.emailjs.com/api/v1.0/email/send
         }
 
+        # Check if time differences exceed 00:20:00 and send email if they do
         if [[ "$time_diff_computer" > "00:20:00" ]]; then
+            echo "Sending alert email: Current Time - Computer Check Time exceeds 20 minutes."
             alert_email "Current Time - Computer Check Time exceeds 20 minutes."
         fi
 
         if [[ "$time_diff_ib" > "00:20:00" ]]; then
+            echo "Sending alert email: Current Time - IB Check Time exceeds 20 minutes."
             alert_email "Current Time - IB Check Time exceeds 20 minutes."
         fi
+
+        # Send a demo email to test the email feature
+        echo "Sending demo email for testing purposes."
+        alert_email "This is a demo email to test the EmailJS integration."
 
     - name: Commit and push changes
       run: |
