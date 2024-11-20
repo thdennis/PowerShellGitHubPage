@@ -1,24 +1,32 @@
-global.location = { protocol: 'https:' };  // Mock the location object
-
-const emailjs = require('@emailjs/browser');
+const axios = require('axios');
 require('dotenv').config();
 
 const sendEmail = async () => {
   try {
     console.log('Preparing to send email...');
-    
-    emailjs.init(process.env.EMAILJS_USER_ID);
 
-    const templateParams = {
-      name: 'User',
-      notes: 'Email sent from GitHub Actions!'
-    };
+    const response = await axios.post('https://api.emailjs.com/api/v1.0/email/send', {
+      service_id: process.env.EMAILJS_SERVICE_ID,
+      template_id: process.env.EMAILJS_TEMPLATE_ID,
+      user_id: process.env.EMAILJS_USER_ID,
+      template_params: {
+        name: 'User',
+        notes: 'Email sent from GitHub Actions!'
+      }
+    }, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${process.env.EMAILJS_PRIVATE_KEY}`
+      }
+    });
 
-    const result = await emailjs.send(process.env.EMAILJS_SERVICE_ID, process.env.EMAILJS_TEMPLATE_ID, templateParams, process.env.EMAILJS_USER_ID);
-    
-    console.log('SUCCESS!', result.text);
+    console.log('SUCCESS!', response.data);
   } catch (error) {
-    console.log('FAILED...', error);
+    if (error.response) {
+      console.log('FAILED...', error.response.data);
+    } else {
+      console.log('Request failed:', error.message);
+    }
   }
 };
 
