@@ -88,6 +88,7 @@ jobs:
 
         # Function to send email via EmailJS
         alert_email() {
+            echo "Sending email via EmailJS"
             curl -X POST \
             -H "Content-Type: application/json" \
             -d '{
@@ -95,6 +96,7 @@ jobs:
                 "template_id": "template_ql5oqxo",
                 "user_id": "7tS3TMQkimjiJq10t"
             }' https://api.emailjs.com/api/v1.0/email/send
+            echo "Email sent"
         }
 
         # Check if time differences exceed 00:20:00 and send email if they do
