@@ -2,7 +2,7 @@ name: Send Email via Gmail
 
 on:
   schedule:
-    - cron: '*/3 * * * *' # Run the job every minute
+    - cron: '*/3 * * * *' # Run the job every 3 minutes
   push:
     branches:
       - main
@@ -70,6 +70,10 @@ jobs:
         else
             echo "SEND_EMAIL=false" >> $GITHUB_ENV
         fi
+
+        echo "SEND_EMAIL: $SEND_EMAIL"
+        echo "Time diff computer: $time_diff_computer"
+        echo "Time diff IB: $time_diff_ib"
 
     - name: Send email via Gmail SMTP
       if: env.SEND_EMAIL == 'true'
