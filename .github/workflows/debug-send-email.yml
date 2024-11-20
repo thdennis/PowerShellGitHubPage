@@ -1,0 +1,28 @@
+name: Debug Send Email
+
+on:
+  workflow_dispatch: # This allows you to manually trigger the workflow for debugging
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Send email via EmailJS
+      env:
+        EMAILJS_PRIVATE_KEY: ${{ secrets.EMAILJS_PRIVATE_KEY }}
+        EMAILJS_SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}
+        EMAILJS_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
+        EMAILJS_USER_ID: ${{ secrets.EMAILJS_USER_ID }}
+      run: npm run send-email
