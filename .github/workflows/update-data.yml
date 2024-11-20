@@ -100,30 +100,8 @@ jobs:
             echo "Email sent"
         }
 
-        # Check if time differences exceed 00:20:00 and send email if they do
-        send_alert=false
-        if [[ "$time_diff_computer" > "00:00:00" ]]; then
-            echo "Time Difference - Current Time vs Computer Check Time exceeds 20 minutes."
-            send_alert=true
-        fi
-
-        if [[ "$time_diff_ib" > "00:20:00" ]]; then
-            echo "Time Difference - Current Time vs IB Check Time exceeds 20 minutes."
-            send_alert=true
-        fi
-
-        now=$(date +%s)
-        echo "Current Epoch Time: $now"
-        if [ "$send_alert" = true ] && [ $((now - last_alert_timestamp)) -gt 5400 ]; then
-            echo "Sending alert email."
-            alert_email
-            echo "$now" > "$last_alert_timestamp_file"
-        else
-            echo "Alert not sent due to cooldown period or no condition met."
-        fi
-
-        # Send a demo email to test the email feature
-        echo "Sending demo email for testing purposes."
+        # Send email without conditions for troubleshooting
+        echo "Sending test email."
         alert_email
 
     - name: Commit and push changes
