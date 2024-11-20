@@ -78,13 +78,6 @@ jobs:
         echo "Time Difference - Current Time vs Computer Check Time: \"$time_diff_computer\""
         echo "Time Difference - Current Time vs IB Check Time: \"$time_diff_ib\""
 
-        # Write the time values to output.txt
-        echo "Current Time (HKT): $current_time" > output.txt
-        echo "Computer Check Time: $computer_time" >> output.txt
-        echo "IB Check Time: $ib_time" >> output.txt
-        echo "Time Difference - Current Time vs Computer Check Time: $time_diff_computer" >> output.txt
-        echo "Time Difference - Current Time vs IB Check Time: $time_diff_ib" >> output.txt
-
         # Initialize last alert timestamp
         last_alert_timestamp_file="last_alert_timestamp.txt"
         if [ ! -f "$last_alert_timestamp_file" ]; then
@@ -102,7 +95,7 @@ jobs:
 
         # Check if time differences exceed 00:20:00 and send email if they do
         send_alert=false
-        if [[ "$time_diff_computer" > "00:00:00" ]]; then
+        if [[ "$time_diff_computer" > "00:20:00" ]]; then
             echo "Time Difference - Current Time vs Computer Check Time exceeds 20 minutes."
             send_alert=true
             alert_message="Current Time - Computer Check Time exceeds 20 minutes."
@@ -132,8 +125,8 @@ jobs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add data.txt output.txt last_alert_timestamp.txt
-        git commit -m "Update data.txt and output.txt" || echo "No changes to commit"
+        git add data.txt last_alert_timestamp.txt
+        git commit -m "Update data.txt" || echo "No changes to commit"
         git push https://x-access-token:${{ secrets.ACTIONS_PAT }}@github.com/thdennis/PowerShellGitHubPage.git
       env:
         ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
