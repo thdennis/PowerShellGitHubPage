@@ -1,4 +1,4 @@
-name: Send Email via Gmail SMTP
+name: Send Email via Gmail 
 
 on:
   schedule:
