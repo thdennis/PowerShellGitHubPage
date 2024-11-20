@@ -2,6 +2,7 @@ const fetch = require('node-fetch');
 
 const sendEmail = async () => {
   try {
+    console.log('Preparing to send email...');
     const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
       method: 'POST',
       headers: {
@@ -19,9 +20,11 @@ const sendEmail = async () => {
       })
     });
 
+    console.log('EmailJS API response status:', response.status);
     const text = await response.text();
     try {
       const data = JSON.parse(text);
+      console.log('Parsed JSON response:', data);
       if (response.ok) {
         console.log('SUCCESS!', data);
       } else {
