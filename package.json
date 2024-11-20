@@ -7,7 +7,7 @@
     "send-email": "node send-email.js"
   },
   "dependencies": {
-    "@emailjs/browser": "^2.6.4"
+    "@emailjs/browser": "^4.0.0"
   },
   "author": "",
   "license": "ISC"
