@@ -1,4 +1,4 @@
-name: Send Email via EmailJS
+name: Send Email
 
 on:
   schedule:
