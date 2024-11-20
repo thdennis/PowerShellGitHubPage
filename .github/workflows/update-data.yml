@@ -83,7 +83,7 @@ jobs:
         echo "DEBUG: Content of output.txt after writing:"
         cat output.txt
 
-        if [ $diff_computer -gt 1200 ] || [ $diff_ib -gt 1200 ]; then
+        if [ $diff_computer -gt 240 ] || [ $diff_ib -gt 240 ]; then
             echo "SEND_EMAIL=true" >> $GITHUB_ENV
         else
             echo "SEND_EMAIL=false" >> $GITHUB_ENV
