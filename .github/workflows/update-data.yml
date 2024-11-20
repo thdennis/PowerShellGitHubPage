@@ -98,6 +98,13 @@ jobs:
         echo "DEBUG: Final Content of output.txt:"
         cat output.txt
 
+        # Ensure the file exists
+        if [ -f output.txt ]; then
+          echo "output.txt exists"
+        else
+          echo "output.txt does not exist"
+        fi
+
     - name: Send email via Gmail SMTP
       if: env.SEND_EMAIL == 'true'
       env:
