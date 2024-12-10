@@ -26,7 +26,7 @@ jobs:
     - name: Fetch data from source
       run: |
         echo "Fetching data from source"
-        curl -L -o data.txt "https://drive.google.com/uc?export=download&id=1-6p05WRNFuCef8OnlkexeZP-HR-hRXYl"
+        curl -L -o data.txt "https://drive.google.com/uc?export=download&id=1-95wSJE41HJS65e6vsjR3KP51JK_Lvg9"
         cat data.txt
 
     - name: Process times and calculate differences
