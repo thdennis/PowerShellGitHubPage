@@ -71,7 +71,6 @@ jobs:
         
         echo "Time Difference - Current Time vs Computer Check Time: \"$time_diff_computer\""
         echo "Time Difference - Current Time vs IB Check Time: \"$time_diff_ib\""
-
         echo "Overwriting and writing to output.txt"
         echo "Current Time (HKT): $current_time" > output.txt
         echo "Computer Check Time: $computer_time" >> output.txt
@@ -83,15 +82,11 @@ jobs:
         echo "DEBUG: Content of output.txt after writing:"
         cat output.txt
 
-        # Determine if email should be sent based on time and day
         current_hour=$(date +'%H')
         current_minute=$(date +'%M')
         current_day=$(date +'%u') # 1 (Monday) to 7 (Sunday)
-
         should_send_email=true
-
         if [ $current_day -ge 1 ] && [ $current_day -le 5 ]; then
-          # Monday to Friday
           if [ $current_hour -eq 3 ] && [ $current_minute -lt 15 ]; then
             should_send_email=false
           elif [ $current_hour -ge 3 ] && [ $current_hour -lt 9 ]; then
@@ -100,13 +95,10 @@ jobs:
             should_send_email=false
           fi
         elif [ $current_day -eq 6 ] && [ $current_hour -ge 3 ]; then
-          # Saturday after 3 AM
           should_send_email=false
         elif [ $current_day -eq 7 ]; then
-          # Sunday
           should_send_email=false
         fi
-
         if [ $diff_computer -gt 240 ] || [ $diff_ib -gt 240 ]; then
           if [ "$should_send_email" = true ]; then
             echo "SEND_EMAIL=true" >> $GITHUB_ENV
@@ -116,7 +108,6 @@ jobs:
         else
           echo "SEND_EMAIL=false" >> $GITHUB_ENV
         fi
-
         echo "DEBUG: SEND_EMAIL: $SEND_EMAIL"
         echo "DEBUG: Time diff computer: $time_diff_computer"
         echo "DEBUG: Time diff IB: $time_diff_ib"
@@ -125,8 +116,6 @@ jobs:
         echo "DEBUG: Environment SEND_EMAIL: ${{ env.SEND_EMAIL }}"
         echo "DEBUG: Final Content of output.txt:"
         cat output.txt
-
-        # Ensure the file exists
         if [ -f output.txt ]; then
           echo "output.txt exists"
         else
@@ -134,7 +123,7 @@ jobs:
         fi
 
     - name: Upload output.txt as artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: output-log
         path: output.txt
@@ -165,7 +154,7 @@ jobs:
           const message = {
             from: 'Your Name <${{ secrets.GMAIL_USER }}>',
             to: process.env.EMAIL_TO,
-            subject: 'Errorsp Alert from GitHub Actions',
+            subject: 'Alert from GitHub Actions',
             text: 'Time Difference - Current Time vs Computer Check Time: ' + process.env.TIME_DIFF_COMPUTER + '\nTime Difference - Current Time vs IB Check Time: ' + process.env.TIME_DIFF_IB
           };
           transporter.sendMail(message, (error, info) => {
