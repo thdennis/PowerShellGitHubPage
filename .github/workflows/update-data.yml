@@ -9,7 +9,7 @@ on:
 
 jobs:
   send-email:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
     - name: Checkout repository
@@ -153,15 +153,3 @@ jobs:
           });
           const message = {
             from: 'Your Name <${{ secrets.GMAIL_USER }}>',
-            to: process.env.EMAIL_TO,
-            subject: 'Alert from GitHub Actions',
-            text: 'Time Difference - Current Time vs Computer Check Time: ' + process.env.TIME_DIFF_COMPUTER + '\nTime Difference - Current Time vs IB Check Time: ' + process.env.TIME_DIFF_IB
-          };
-          transporter.sendMail(message, (error, info) => {
-            if (error) {
-              console.log('Error: ', error);
-            } else {
-              console.log('Email sent: ', info.response);
-            }
-          });
-        "
